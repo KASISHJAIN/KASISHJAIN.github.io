@@ -6,475 +6,75 @@
 <title>Kasish Jain — Computer Engineering @ UTD</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&display=swap" rel="stylesheet" />
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --bg:           #0e0e0f;
-  --bg-2:         #141415;
-  --bg-3:         #1a1a1c;
-  --bg-4:         #222225;
-  --border:       rgba(255,255,255,0.07);
-  --border-hover: rgba(255,255,255,0.13);
-  --text:         #f0efed;
-  --text-2:       #9e9c98;
-  --text-3:       #5e5c59;
-  --accent:       #e8875a;
-  --accent-dim:   rgba(232,135,90,0.12);
-  --nav-h:        62px;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Geist', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  font-size: 16px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--bg-4); border-radius: 3px; }
-
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  height: var(--nav-h);
-  background: rgba(14,14,15,0.85);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-  z-index: 200;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 clamp(1.5rem, 5vw, 4rem);
-}
-.nav-logo {
-  font-family: 'Instrument Serif', serif;
-  font-size: 1.15rem; color: var(--text);
-  text-decoration: none; letter-spacing: -0.01em;
-}
-.nav-links { display: flex; gap: 1.75rem; list-style: none; align-items: center; }
-.nav-links a {
-  font-size: 0.825rem; color: var(--text-2);
-  text-decoration: none; transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--text); }
-.nav-cta {
-  font-size: 0.78rem !important; font-weight: 500 !important;
-  color: var(--bg) !important; background: var(--text);
-  padding: 0.4rem 1.1rem !important; border-radius: 100px;
-  transition: opacity 0.2s !important;
-}
-.nav-cta:hover { opacity: 0.8 !important; }
-
-/* LAYOUT */
-main { padding-top: var(--nav-h); }
-section { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); }
-.container      { max-width: 820px;  margin: 0 auto; }
-.container-wide { max-width: 1060px; margin: 0 auto; }
-
-/* HERO */
-#hero { min-height: calc(100vh - var(--nav-h)); display: flex; align-items: center; }
-
-.hero-inner {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 3rem; align-items: center;
-  width: 100%;
-}
-@media (max-width: 700px) {
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-photo-wrap { display: none; }
-}
-
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 0.75rem; font-weight: 500;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 1.5rem;
-}
-.hero-eyebrow::before {
-  content: ''; display: block; width: 18px; height: 1px; background: var(--accent);
-}
-
-h1.hero-name {
-  font-family: 'Instrument Serif', serif;
-  font-size: clamp(2.8rem, 6.5vw, 5.2rem);
-  line-height: 1.04; letter-spacing: -0.025em;
-  color: var(--text); margin-bottom: 1.4rem;
-}
-h1.hero-name em { font-style: italic; color: var(--text-2); }
-
-.hero-bio {
-  font-size: clamp(0.9rem, 1.2vw, 1rem); color: var(--text-2);
-  max-width: 480px; line-height: 1.75; margin-bottom: 2.25rem; font-weight: 300;
-}
-
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
-
-.btn-primary {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 0.875rem; font-weight: 500; color: var(--bg); background: var(--text);
-  padding: 0.7rem 1.6rem; border-radius: 100px; text-decoration: none;
-  transition: opacity 0.2s, transform 0.2s;
-}
-.btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
-
-.btn-ghost {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 0.875rem; color: var(--text-2); text-decoration: none;
-  padding: 0.7rem 1.4rem; border: 1px solid var(--border-hover); border-radius: 100px;
-  transition: color 0.2s, border-color 0.2s;
-}
-.btn-ghost:hover { color: var(--text); border-color: rgba(255,255,255,0.25); }
-
-/* PHOTO PLACEHOLDER */
-.hero-photo-wrap {
-  display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
-}
-.hero-photo {
-  width: 180px; height: 220px;
-  border-radius: 14px;
-  border: 1px solid var(--border-hover);
-  background: var(--bg-3);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 8px;
-  overflow: hidden;
-  position: relative;
-}
-.hero-photo img {
-  width: 100%; height: 100%; object-fit: cover;
-  border-radius: 14px;
-}
-.photo-placeholder {
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-}
-.photo-placeholder-icon {
-  width: 52px; height: 52px; border-radius: 50%;
-  background: var(--bg-4); border: 1px solid var(--border-hover);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.4rem; color: var(--text-3);
-}
-.photo-placeholder p {
-  font-size: 0.7rem; color: var(--text-3); text-align: center; line-height: 1.5;
-}
-.photo-caption {
-  font-size: 0.7rem; color: var(--text-3); text-align: center;
-}
-
-/* STATS */
-.hero-stats {
-  display: flex; gap: 2rem; flex-wrap: wrap;
-  margin-top: 3.5rem; padding-top: 2.25rem; border-top: 1px solid var(--border);
-}
-.stat-number {
-  font-family: 'Instrument Serif', serif; font-size: 1.8rem;
-  line-height: 1; color: var(--text); margin-bottom: 0.2rem;
-}
-.stat-label { font-size: 0.68rem; color: var(--text-3); letter-spacing: 0.06em; text-transform: uppercase; }
-
-/* PRESS BANNER */
-.press-banner {
-  background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-  padding: 1.1rem clamp(1.5rem, 5vw, 4rem);
-}
-.press-inner {
-  max-width: 1060px; margin: 0 auto;
-  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
-}
-.press-label {
-  font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--text-3); white-space: nowrap;
-}
-.press-divider { width: 1px; height: 16px; background: var(--border-hover); flex-shrink: 0; }
-.press-item {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 0.8rem; color: var(--text-2); text-decoration: none;
-  border: 1px solid var(--border); border-radius: 100px;
-  padding: 0.3rem 0.9rem;
-  transition: color 0.2s, border-color 0.2s;
-}
-.press-item:hover { color: var(--text); border-color: var(--border-hover); }
-.press-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-
-/* SECTION LABELS */
-.section-label {
-  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--text-3); margin-bottom: 0.9rem;
-  display: flex; align-items: center; gap: 10px;
-}
-.section-label::after { content: ''; width: 32px; height: 1px; background: var(--border-hover); }
-
-h2.section-title {
-  font-family: 'Instrument Serif', serif;
-  font-size: clamp(1.9rem, 4vw, 2.75rem); letter-spacing: -0.02em;
-  line-height: 1.15; color: var(--text); margin-bottom: 0.75rem;
-}
-.section-sub {
-  font-size: 0.9rem; color: var(--text-2);
-  max-width: 460px; margin-bottom: 3rem; font-weight: 300;
-}
-
-/* PROJECTS */
-#projects { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
-  gap: 1px; background: var(--border);
-  border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
-}
-
-.project-card {
-  background: var(--bg-2); padding: 1.75rem 1.75rem 1.5rem;
-  display: flex; flex-direction: column; cursor: pointer;
-  transition: background 0.2s; position: relative;
-}
-.project-card:hover { background: var(--bg-3); }
-.project-card::after {
-  content: '↗'; position: absolute; top: 1.5rem; right: 1.5rem;
-  font-size: 0.9rem; color: var(--text-3); transition: color 0.2s, transform 0.2s;
-}
-.project-card:hover::after { color: var(--accent); transform: translate(2px, -2px); }
-
-.project-tag {
-  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.07em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem;
-}
-h3.project-title {
-  font-family: 'Instrument Serif', serif; font-size: 1.2rem;
-  letter-spacing: -0.01em; line-height: 1.3; color: var(--text);
-  margin-bottom: 0.65rem; padding-right: 1.5rem;
-}
-.project-summary {
-  font-size: 0.84rem; color: var(--text-2); line-height: 1.65;
-  flex: 1; margin-bottom: 1.2rem; font-weight: 300;
-}
-.project-tech { display: flex; flex-wrap: wrap; gap: 5px; }
-.tech-tag {
-  font-size: 0.67rem; font-weight: 500; color: var(--text-3);
-  background: var(--bg-4); border-radius: 100px;
-  padding: 3px 9px; border: 1px solid var(--border);
-}
-
-/* MODAL */
-.modal-overlay {
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,0.78);
-  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-  z-index: 500; display: flex; align-items: flex-end; justify-content: center;
-  opacity: 0; pointer-events: none; transition: opacity 0.3s;
-}
-.modal-overlay.open { opacity: 1; pointer-events: all; }
-.modal {
-  background: var(--bg-2); border: 1px solid var(--border-hover);
-  border-radius: 20px 20px 0 0; width: 100%; max-width: 700px;
-  max-height: 88vh; overflow-y: auto;
-  padding: 2.5rem 2.5rem 3rem;
-  transform: translateY(40px);
-  transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
-  position: relative;
-}
-.modal-overlay.open .modal { transform: translateY(0); }
-
-.modal-close {
-  position: absolute; top: 1.25rem; right: 1.25rem;
-  width: 32px; height: 32px; background: var(--bg-4);
-  border: 1px solid var(--border); border-radius: 50%; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.9rem; color: var(--text-2); transition: background 0.2s, color 0.2s;
-}
-.modal-close:hover { background: var(--bg-3); color: var(--text); }
-.modal-tag {
-  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem;
-}
-.modal h2 {
-  font-family: 'Instrument Serif', serif;
-  font-size: clamp(1.5rem, 3vw, 2rem); letter-spacing: -0.02em;
-  line-height: 1.2; color: var(--text); margin-bottom: 1.75rem;
-}
-.modal-section { margin-bottom: 1.5rem; }
-.modal-section-label {
-  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--text-3); margin-bottom: 0.5rem;
-}
-.modal-section p { font-size: 0.9rem; color: var(--text-2); line-height: 1.75; font-weight: 300; }
-.modal-insight {
-  background: var(--accent-dim); border-left: 2px solid var(--accent);
-  border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin-bottom: 1.5rem;
-}
-.modal-insight .modal-section-label { color: var(--accent); }
-.modal-insight p { color: var(--text-2); }
-.modal-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.75rem; }
-.modal-tech .tech-tag { font-size: 0.75rem; padding: 4px 12px; }
-.modal-divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
-.modal-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-.modal-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 0.82rem; font-weight: 500; padding: 0.55rem 1.2rem;
-  border-radius: 100px; text-decoration: none;
-  transition: opacity 0.2s, transform 0.15s;
-}
-.modal-link:hover { opacity: 0.8; transform: translateY(-1px); }
-.modal-link.primary { background: var(--text); color: var(--bg); }
-.modal-link.outline { border: 1px solid var(--border-hover); color: var(--text-2); }
-.modal-link.outline:hover { border-color: rgba(255,255,255,0.25); color: var(--text); }
-
-/* ABOUT */
-#about { border-bottom: 1px solid var(--border); }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-@media (max-width: 680px) { .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
-
-.about-text p {
-  font-size: 0.95rem; color: var(--text-2);
-  line-height: 1.8; margin-bottom: 1.1rem; font-weight: 300;
-}
-.about-text p:last-child { margin-bottom: 0; }
-.about-text strong { color: var(--text); font-weight: 500; }
-
-.skills-group { margin-bottom: 1.6rem; }
-.skills-group-label {
-  font-size: 0.67rem; font-weight: 500; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--text-3); margin-bottom: 0.6rem;
-}
-.skills-list { display: flex; flex-wrap: wrap; gap: 5px; }
-.skill-pill {
-  font-size: 0.78rem; color: var(--text-2); background: var(--bg-3);
-  border: 1px solid var(--border); border-radius: 100px; padding: 4px 12px;
-}
-
-.involvement-list { list-style: none; }
-.involvement-list li {
-  font-size: 0.84rem; color: var(--text-2); padding: 0.55rem 0;
-  border-bottom: 1px solid var(--border);
-  display: flex; gap: 10px; align-items: baseline; font-weight: 300;
-}
-.involvement-list li:last-child { border-bottom: none; }
-.involvement-list li::before { content: '·'; color: var(--accent); font-size: 1.1rem; line-height: 1; flex-shrink: 0; }
-
-/* CONTACT */
-#contact { border-top: 1px solid var(--border); }
-.contact-inner {
-  border: 1px solid var(--border); border-radius: 16px;
-  padding: clamp(2rem, 5vw, 3.5rem); background: var(--bg-2);
-}
-.contact-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 2rem; }
-.contact-link {
-  display: inline-flex; align-items: center; gap: 7px;
-  font-size: 0.82rem; font-weight: 500; padding: 0.65rem 1.4rem;
-  border-radius: 100px; text-decoration: none;
-  transition: opacity 0.2s, transform 0.15s;
-}
-.contact-link:hover { transform: translateY(-2px); opacity: 0.85; }
-.contact-link.primary { background: var(--text); color: var(--bg); }
-.contact-link.outline { border: 1px solid var(--border-hover); color: var(--text-2); }
-.contact-link.outline:hover { border-color: rgba(255,255,255,0.25); color: var(--text); }
-
-footer {
-  border-top: 1px solid var(--border);
-  padding: 1.5rem clamp(1.5rem, 5vw, 4rem);
-  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
-}
-footer p { font-size: 0.75rem; color: var(--text-3); }
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.hero-eyebrow { animation: fadeUp 0.55s ease both; }
-h1.hero-name  { animation: fadeUp 0.55s 0.08s ease both; }
-.hero-bio     { animation: fadeUp 0.55s 0.16s ease both; }
-.hero-actions { animation: fadeUp 0.55s 0.24s ease both; }
-.hero-stats   { animation: fadeUp 0.55s 0.36s ease both; }
-.hero-photo-wrap { animation: fadeUp 0.55s 0.12s ease both; }
-
-@media (max-width: 560px) {
-  .nav-links li:not(:last-child) { display: none; }
-  .modal { padding: 2rem 1.25rem 2.5rem; border-radius: 16px 16px 0 0; }
-}
-</style>
+<link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-<nav>
+<nav id="main-nav">
   <a href="#hero" class="nav-logo">Kasish Jain</a>
-  <ul class="nav-links">
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#involvement" onclick="closeMenu()">Involvement</a></li>
+    <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#contact" class="nav-cta" onclick="closeMenu()">Contact</a></li>
   </ul>
 </nav>
+<div class="nav-mobile-overlay" id="nav-overlay" onclick="closeMenu()"></div>
 
+<canvas id="hero-canvas"></canvas>
 <main>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="container-wide">
-    <div class="hero-inner">
-      <div>
-        <p class="hero-eyebrow">Computer Engineering · UT Dallas</p>
-        <h1 class="hero-name">Kasish Jain.<br><em>Builder of systems</em><br><em>that matter.</em></h1>
-        <p class="hero-bio">Sophomore at UTD's Collegium V Honors College. I build at the intersection of hardware, software, and real-world impact — from embedded avionics to computer vision to mobile apps.</p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn-primary">View my work →</a>
-          <a href="#contact" class="btn-ghost">Get in touch</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-number">5+</div>
-            <div class="stat-label">Certifications</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">7+</div>
-            <div class="stat-label">Projects</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">6+</div>
-            <div class="stat-label">Campus orgs</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">'28</div>
-            <div class="stat-label">Graduating</div>
-          </div>
-        </div>
-      </div>
+  <div class="hero-inner">
 
-      <!-- PHOTO -->
-      <div class="hero-photo-wrap">
-        <div class="hero-photo">
-          <!-- To add your photo: replace the div below with <img src="your-photo.jpg" alt="Kasish Jain"> -->
-          <img src="/assets/Kasish-Jain-Face.JPG" alt="Kasish Jain">
-        </div>
-        <p class="photo-caption">Kasish Jain · UTD '28</p>
+    <!-- LEFT: PHOTO -->
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-glow"></div>
+      <div class="hero-photo">
+        <img src="/assets/Kasish-Jain-Face.JPG" alt="Kasish Jain">
       </div>
     </div>
+
+    <!-- RIGHT: TEXT -->
+    <div class="hero-content">
+      <p class="hero-eyebrow">Computer Engineering · UT Dallas</p>
+      <h1 class="hero-name">Kasish Jain.</h1>
+      <p class="hero-tagline">Engineering reliable systems —<br>where hardware meets software.</p>
+      <p class="hero-bio">Sophomore at UTD's Collegium V Honors College. I build at the intersection of embedded systems, computer vision, and real-world impact.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View my work →</a>
+        <a href="#contact" class="btn-ghost">Get in touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">7+</div>
+          <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">8</div>
+          <div class="stat-label">Campus orgs</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Leadership roles</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">'28</div>
+          <div class="stat-label">Graduating</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
-
-<!-- PRESS BANNER -->
-<div class="press-banner">
-  <div class="press-inner">
-    <span class="press-label">Featured in</span>
-    <div class="press-divider"></div>
-    <!-- UPDATE THIS LINK when you have the exact URL -->
-    <a href="https://veraaquaveravita.org/news/out-of-thin-air-how-vavv-and-utd-students-are-bringing-clean-water-to-peru" target="_blank" class="press-item">
-      <span class="press-dot"></span>
-      Vera Aqua Vera Vita — VAVV Partners With UTD Students on Clean Water in Peru ↗
-    </a>
-  </div>
-</div>
 
 <!-- PROJECTS -->
 <section id="projects">
   <div class="container-wide">
-    <p class="section-label">Selected work</p>
     <h2 class="section-title">Projects</h2>
-    <p class="section-sub">Click any card to see the full breakdown — problem, process, and what I learned.</p>
     <div class="projects-grid">
 
       <div class="project-card" onclick="openModal('vision')">
@@ -510,7 +110,10 @@ h1.hero-name  { animation: fadeUp 0.55s 0.08s ease both; }
       <div class="project-card" onclick="openModal('solar')">
         <span class="project-tag">Systems · Community Eng · EPICS UTD</span>
         <h3 class="project-title">Solar-Powered Water Purification</h3>
-        <p class="project-summary">Redesigned a containerized clean water system for rural Peru — real constraints, real stakes. Featured by Vera Aqua Vera Vita.</p>
+        <p class="project-summary">Redesigned a containerized clean water system for rural Peru — real constraints, real stakes.</p>
+        <a href="https://veraaquaveravita.org/news/out-of-thin-air-how-vavv-and-utd-students-are-bringing-clean-water-to-peru" target="_blank" class="press-badge" onclick="event.stopPropagation()">
+          <span class="press-badge-dot"></span>Featured in Vera Aqua Vera Vita ↗
+        </a>
         <div class="project-tech">
           <span class="tech-tag">Fusion 360</span><span class="tech-tag">Revit</span>
           <span class="tech-tag">Solar Systems</span><span class="tech-tag">CAD</span>
@@ -551,56 +154,134 @@ h1.hero-name  { animation: fadeUp 0.55s 0.08s ease both; }
   </div>
 </section>
 
+<!-- INVOLVEMENT -->
+<section id="involvement">
+  <div class="container-wide">
+    <h2 class="section-title">Where I show up.</h2>
+    <div class="inv-grid">
+
+      <div class="inv-card">
+        <div class="inv-top">
+          <span class="inv-num">01</span>
+          <span class="inv-date">2024–Present</span>
+        </div>
+        <div class="inv-org">AIAA UTD</div>
+        <div class="inv-role">Comet Rocketry L1 · Avionics</div>
+        <div class="inv-desc">Designing and programming onboard avionics for real high-G launches.</div>
+      </div>
+
+      <div class="inv-card">
+        <div class="inv-top">
+          <span class="inv-num">02</span>
+          <span class="inv-date">2024–Present</span>
+        </div>
+        <div class="inv-org">EPICS UTDesign</div>
+        <div class="inv-role">Solar Water Purification</div>
+        <div class="inv-desc">Co-leading design of a solar-powered clean water system for rural Peru.</div>
+      </div>
+
+      <div class="inv-card">
+        <div class="inv-top">
+          <span class="inv-num">03</span>
+          <span class="inv-date">2024–Present</span>
+        </div>
+        <div class="inv-org">ACM UTD</div>
+        <div class="inv-role">Projects · Memoir · Mobile Dev</div>
+        <div class="inv-desc">Building Memoir — a digital memory preservation app — as part of ACM Projects.</div>
+      </div>
+
+      <div class="inv-card">
+        <div class="inv-top">
+          <span class="inv-num">04</span>
+          <span class="inv-date">2024–Present</span>
+        </div>
+        <div class="inv-org">Society of Women Engineers</div>
+        <div class="inv-role">Braille Input Glove</div>
+        <div class="inv-desc">Prototyping an assistive glove that translates finger-movement Braille to text and audio.</div>
+      </div>
+
+      <div class="inv-card">
+        <div class="inv-top">
+          <span class="inv-num">05</span>
+          <span class="inv-date">2024–Present</span>
+        </div>
+        <div class="inv-org">IEEE UTD</div>
+        <div class="inv-role">Initiatives Officer &amp; Tutor</div>
+        <div class="inv-desc">Running technical initiatives and tutoring members in circuits and embedded systems.</div>
+      </div>
+
+      <div class="inv-card">
+        <div class="inv-top">
+          <span class="inv-num">06</span>
+          <span class="inv-date">2024–Present</span>
+        </div>
+        <div class="inv-org">CodePath</div>
+        <div class="inv-role">Peer Mentor · Web, Cyber, DSA</div>
+        <div class="inv-desc">Mentoring students across Web Dev, Cybersecurity, and Data Structures courses.</div>
+      </div>
+
+      <div class="inv-card">
+        <div class="inv-top">
+          <span class="inv-num">07</span>
+          <span class="inv-date">2024–Present</span>
+        </div>
+        <div class="inv-org">Girls Who Code UTD</div>
+        <div class="inv-role">Events Officer</div>
+        <div class="inv-desc">Organizing events to support and grow the women in computing community at UTD.</div>
+      </div>
+
+      <div class="inv-card">
+        <div class="inv-top">
+          <span class="inv-num">08</span>
+          <span class="inv-date">2024–Present</span>
+        </div>
+        <div class="inv-org">SASE × Texas Instruments</div>
+        <div class="inv-role">Mentee</div>
+        <div class="inv-desc">Receiving industry mentorship from Texas Instruments engineers through SASE.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about">
   <div class="container-wide">
-    <p class="section-label">Background</p>
     <h2 class="section-title">About me</h2>
     <div class="about-grid">
       <div class="about-text">
-        <p>I'm <strong>Kasish Jain</strong>, a Computer Engineering student at UT Dallas (Collegium V Honors) from McKinney, TX. I started coding in high school out of curiosity — built games in Java, competed across DFW, ranked top 2 at Digital Divas out of 60+ teams.</p>
-        <p>At UTD, I stopped just learning and started <strong>building things that connect hardware and software</strong>. I'm drawn to problems that live at that boundary — where a software bug can physically break something, and reliability isn't optional.</p>
-        <p>I'm particularly interested in <strong>embedded systems, computer vision, and AI safety in physical systems</strong>. I believe the next decade of AI will be defined by how systems handle failure — and I want to build those failure-aware systems.</p>
-        <p>Outside engineering: cricket, photography, baking, and detective games. I speak English, Hindi, Marwari, and conversational Tamil.</p>
+        <p>I'm <strong>Kasish Jain</strong>, a Computer Engineering student at UT Dallas (Collegium V Honors). I build at the intersection of <strong>embedded systems, computer vision, and software</strong> — problems where a bug has physical consequences and reliability isn't optional.</p>
+        <p>Looking for <strong>Summer 2026 internships</strong> in embedded systems, software engineering, or applied AI. I bring hardware intuition, software depth, and a bias toward building things that actually work.</p>
       </div>
-      <div>
-        <div class="skills-group">
-          <div class="skills-group-label">Languages</div>
-          <div class="skills-list">
-            <span class="skill-pill">Python</span><span class="skill-pill">C/C++</span>
-            <span class="skill-pill">Java</span><span class="skill-pill">JavaScript</span>
-            <span class="skill-pill">SQL</span><span class="skill-pill">MATLAB</span>
-          </div>
+      <div class="skills-side">
+        <div class="skills-group-label">Core</div>
+        <div class="skills-list">
+          <span class="skill-pill">C / C++</span>
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">ESP32</span>
+          <span class="skill-pill">OpenCV</span>
         </div>
-        <div class="skills-group">
+        <div class="skills-group" style="margin-top: 1.4rem;">
           <div class="skills-group-label">Embedded & Hardware</div>
           <div class="skills-list">
-            <span class="skill-pill">ESP32</span><span class="skill-pill">Arduino</span>
-            <span class="skill-pill">FSM Design</span><span class="skill-pill">Soldering</span>
-            <span class="skill-pill">Circuit Design</span><span class="skill-pill">Oscilloscope</span>
+            <span class="skill-pill">Arduino</span>
+            <span class="skill-pill">FSM Design</span>
+            <span class="skill-pill">Circuit Design</span>
+            <span class="skill-pill">Soldering</span>
+            <span class="skill-pill">Oscilloscope</span>
           </div>
         </div>
         <div class="skills-group">
           <div class="skills-group-label">Software & Frameworks</div>
           <div class="skills-list">
-            <span class="skill-pill">OpenCV</span><span class="skill-pill">MediaPipe</span>
-            <span class="skill-pill">React Native</span><span class="skill-pill">React</span>
-            <span class="skill-pill">Node.js</span><span class="skill-pill">Supabase</span>
-            <span class="skill-pill">Firebase</span><span class="skill-pill">Git</span>
+            <span class="skill-pill">MediaPipe</span>
+            <span class="skill-pill">React Native</span>
+            <span class="skill-pill">React</span>
+            <span class="skill-pill">Node.js</span>
+            <span class="skill-pill">Supabase</span>
+            <span class="skill-pill">Git</span>
           </div>
         </div>
-        <div class="skills-group-label" style="margin-bottom:0.5rem;">Campus involvement</div>
-        <ul class="involvement-list">
-          <li>AIAA UTD — Comet Rocketry L1, Avionics</li>
-          <li>EPICS UTDesign — Solar Water Purification</li>
-          <li>ACM UTD — Projects (Memoir, Mobile Dev)</li>
-          <li>Society of Women Engineers — Braille Glove</li>
-          <li>IEEE UTD — Initiatives Officer & Tutor</li>
-          <li>Girls Who Code UTD — Events Officer</li>
-          <li>Cybersecurity Club UTD — Logistics Officer</li>
-          <li>CodePath — Peer Mentor (Web, Cyber, DSA)</li>
-          <li>SASE × Texas Instruments — Mentee</li>
-        </ul>
       </div>
     </div>
   </div>
@@ -610,11 +291,15 @@ h1.hero-name  { animation: fadeUp 0.55s 0.08s ease both; }
 <section id="contact">
   <div class="container-wide">
     <div class="contact-inner">
-      <p class="section-label">Let's talk</p>
       <h2 class="section-title">Open to internships<br>for Summer 2026.</h2>
       <p class="section-sub">Interested in embedded systems, software engineering, and applied AI. If you're building something interesting, reach out.</p>
+      <div class="contact-press">
+        <span class="press-badge-dot"></span>
+        <span>As featured in </span>
+        <a href="https://veraaquaveravita.org/news/out-of-thin-air-how-vavv-and-utd-students-are-bringing-clean-water-to-peru" target="_blank">Vera Aqua Vera Vita ↗</a>
+      </div>
       <div class="contact-links">
-        <a href="mailto:iamkasishjain@gmail.com" class="contact-link primary">Email me →</a>
+        <a href="/cdn-cgi/l/email-protection#bdd4dcd0d6dcced4ced5d7dcd4d3fddad0dcd4d193ded2d0" class="contact-link primary">Email me →</a>
         <a href="https://linkedin.com/in/kasishjain" target="_blank" class="contact-link outline">LinkedIn ↗</a>
         <a href="https://github.com/kasishjain" target="_blank" class="contact-link outline">GitHub ↗</a>
       </div>
@@ -637,119 +322,6 @@ h1.hero-name  { animation: fadeUp 0.55s 0.08s ease both; }
   </div>
 </div>
 
-<script>
-const projects = {
-  vision: {
-    tag: 'Computer Vision · Embedded · Ongoing',
-    title: 'Vision-Based Secure Control Panel',
-    problem: "Existing gesture-based interfaces don't account for what happens when the sensor fails or gives bad data. I wanted to build a system that could control hardware safely even under unreliable inputs — so I designed the failure modes before writing a single line of control logic.",
-    built: "A real-time computer vision pipeline using OpenCV and MediaPipe that classifies hand gestures and translates them into hardware control signals. A finite state machine (IDLE, ARMED, ACTIVE, ALERT) enforces safe system behavior. Python handles the perception layer; Arduino enforces the hardware states — completely separated so a vision glitch can never cause unsafe actuation.",
-    insight: "Separating perception logic from hardware enforcement meant a vision fault could never put the system in a dangerous state. Designing for failure first changed how the entire architecture was structured.",
-    tech: ['OpenCV', 'MediaPipe', 'Python', 'Arduino', 'Finite State Machine', 'Serial Communication', 'C/C++'],
-    github: 'https://github.com/kasishjain'
-  },
-  memoir: {
-    tag: 'Mobile · AI · ACM Projects',
-    title: 'Memoir — Digital Memory Preservation App',
-    problem: "Meaningful handwritten cards and letters get lost, damaged, or forgotten over time. Meanwhile, digital messages lack the emotional weight of something handwritten. Memoir was built to bridge that gap — preserving old memories while encouraging new ones worth keeping.",
-    built: "A React Native (Expo) mobile app with a Supabase backend. Users can scan handwritten cards via camera + Google Cloud Vision OCR, which extracts and displays text alongside the original image. OpenAI API powers automatic tagging by mood and occasion. A card creation tool lets users design new digital cards with custom fonts, stickers, music, and voice notes.",
-    insight: "OCR on handwriting is messy — the variance is huge. Instead of trying to make it perfect, I designed the UX to show the OCR output side-by-side with the original image and let users correct it. Embracing imperfection in the AI output and giving the user control was the right call.",
-    tech: ['React Native', 'Expo', 'TypeScript', 'Supabase', 'PostgreSQL', 'Google Cloud Vision', 'OpenAI API', 'NativeWind', 'Vector Search'],
-    github: 'https://github.com/kasishjain'
-  },
-  rocketry: {
-    tag: 'Embedded · Hardware · AIAA UTD',
-    title: 'L1 Rocketry Avionics System',
-    problem: "High-G launches don't forgive software bugs. As part of AIAA UTD's Comet Rocketry L1 program, I needed to design and program onboard avionics for a real launch — where reliability under physical stress wasn't optional.",
-    built: "Onboard avionics using ESP32 microcontrollers with BMP280 pressure sensors for altitude tracking and SD card logging for post-flight telemetry analysis. The system had to operate reliably in a constrained compute environment under significant physical stress.",
-    insight: "Debugging post-flight via SD-logged data taught me how to reason about system behavior I couldn't observe in real time. Constrained environments force you to write lean, predictable code — no shortcuts.",
-    tech: ['ESP32', 'BMP280', 'C/C++', 'SD Logging', 'Sensor Interfacing', 'Embedded Systems'],
-    github: 'https://github.com/kasishjain'
-  },
-  solar: {
-    tag: 'Systems · Community Engineering · EPICS UTD',
-    title: 'Solar-Powered Water Purification System',
-    problem: "A community in rural Peru needed reliable clean water. Our EPICS team redesigned a containerized purification system — downsizing from a 40ft to 20ft container while keeping it fully functional, safe, and locally maintainable. The project was featured by Vera Aqua Vera Vita.",
-    built: "A 10.3 kW bifacial solar array with 120 kWh LiFePO₄ battery system powering a containerized water purification unit. I co-led CAD modeling, electrical schematics, wiring diagrams, inverter/MPPT configuration, and component sourcing from Peruvian vendors for local affordability.",
-    insight: "Real constraints — budget, local vendors, safety codes — killed our first three designs. Data-driven validation, not opinions, is the only way to resolve technical disagreements in a team. I also learned Autodesk Revit mid-project to produce the full construction sheet set.",
-    tech: ['Fusion 360', 'Autodesk Revit', 'Solar/Battery Systems', 'Electrical Schematics', 'CAD', 'Power Analysis'],
-    github: '',
-    press: { label: 'Read the VAVV article ↗', url: 'https://veraaquaveravita.org/news/out-of-thin-air-how-vavv-and-utd-students-are-bringing-clean-water-to-peru' }
-  },
-  jiramate: {
-    tag: 'Full-Stack · Hackathon · Nov 2025',
-    title: 'JiraMate — AI Workflow Automation',
-    problem: "Writing Jira user stories is repetitive and easy to do badly. At a hackathon, I built a tool that uses an LLM to auto-generate user stories and acceptance criteria from natural language input.",
-    built: "A full-stack web app using React, Node.js, and Firebase. The backend integrates Nemotron via OpenRouter to generate structured user stories from prompts. I added validation and prompt engineering to make LLM output reliable enough to actually submit to Jira.",
-    insight: "LLM outputs are non-deterministic. Treating AI output as untrusted input — not ground truth — changed how I built the backend validation layer. Prompt engineering is a real engineering discipline.",
-    tech: ['React', 'Node.js', 'Firebase', 'LLM API', 'OpenRouter', 'Prompt Engineering', 'REST API'],
-    github: 'https://github.com/kasishjain'
-  },
-  pantryfy: {
-    tag: 'Web · Hackathon · April 2025',
-    title: 'Pantry-fy — Recipe Recommendation Platform',
-    problem: "Most recipe sites make you search for dishes, not ingredients. Pantry-fy flips that — type what's in your fridge, get recipes that actually work with what you have.",
-    built: "A responsive web platform with a React + Bootstrap frontend and Node.js/Express.js backend. MongoDB stores and queries recipes by ingredient. Focused on core functionality and clean UX under hackathon time pressure.",
-    insight: "Hackathon scope pressure taught me to cut features ruthlessly. A fast, working core beats a slow, half-finished feature set. Clean API design upfront makes teammate integration painless.",
-    tech: ['React', 'Express.js', 'MongoDB', 'Node.js', 'Bootstrap', 'REST API'],
-    github: 'https://github.com/kasishjain'
-  },
-  braille: {
-    tag: 'Hardware · Assistive Technology · SWE UTD',
-    title: 'Braille Input Glove',
-    problem: "Visually impaired users lack an intuitive way to input Braille digitally. Existing solutions are bulky, expensive, or require specialized hardware most users don't have.",
-    built: "Prototyping a glove with embedded sensors that detects finger-movement Braille patterns and translates them in real-time into text and audio output. Working with SWE's multidisciplinary team through active iteration.",
-    insight: "Assistive tech design requires deeply understanding the user's mental model, not just the hardware spec. The hardest problems aren't electrical — they're ergonomic and cognitive.",
-    tech: ['Embedded Systems', 'Sensor Interfacing', 'Hardware Prototyping', 'Accessibility Design'],
-    github: ''
-  }
-};
-
-function openModal(id) {
-  const p = projects[id];
-  if (!p) return;
-
-  let linksHTML = '';
-  if (p.github) linksHTML += `<a href="${p.github}" class="modal-link primary" target="_blank">View on GitHub ↗</a>`;
-  if (p.press)  linksHTML += `<a href="${p.press.url}" class="modal-link outline" target="_blank">${p.press.label}</a>`;
-  if (!p.github && !p.press) linksHTML = `<span style="font-size:0.8rem;color:var(--text-3)">Repo link coming soon</span>`;
-
-  document.getElementById('modalContent').innerHTML = `
-    <p class="modal-tag">${p.tag}</p>
-    <h2>${p.title}</h2>
-    <div class="modal-section">
-      <div class="modal-section-label">The Problem</div>
-      <p>${p.problem}</p>
-    </div>
-    <div class="modal-divider"></div>
-    <div class="modal-section">
-      <div class="modal-section-label">What I Built</div>
-      <p>${p.built}</p>
-    </div>
-    <div class="modal-insight">
-      <div class="modal-section-label">Key Insight</div>
-      <p>${p.insight}</p>
-    </div>
-    <div class="modal-section-label" style="margin-bottom:0.5rem;">Tech Stack</div>
-    <div class="modal-tech">${p.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>
-    <div class="modal-divider"></div>
-    <div class="modal-links">${linksHTML}</div>
-  `;
-
-  document.getElementById('modalOverlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  document.getElementById('modalOverlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function handleOverlayClick(e) {
-  if (e.target === document.getElementById('modalOverlay')) closeModal();
-}
-
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-</script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
