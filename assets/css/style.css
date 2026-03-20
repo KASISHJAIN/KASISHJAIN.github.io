@@ -565,7 +565,7 @@ h3.project-title {
    ABOUT
    ============================================================ */
 #about { border-bottom: 1px solid var(--border); }
-.about-grid { max-width: 560px; }
+.about-grid { max-width: max-content; }
  
 .about-text p {
   font-size: 0.95rem; color: var(--text-2);
