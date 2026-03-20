@@ -262,3 +262,23 @@ function handleOverlayClick(e) {
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* ============================================================
+   FLOATING UPDATES BUBBLE
+   ============================================================ */
+window.toggleFab = function () {
+  const panel = document.getElementById('fabPanel');
+  const btn   = document.getElementById('fabBtn');
+  const open  = panel.classList.toggle('open');
+  btn.classList.toggle('open', open);
+};
+ 
+// Close on outside click
+document.addEventListener('click', function(e) {
+  const wrap = document.querySelector('.fab-wrap');
+  if (wrap && !wrap.contains(e.target)) {
+    document.getElementById('fabPanel').classList.remove('open');
+    document.getElementById('fabBtn').classList.remove('open');
+  }
+});
+ 

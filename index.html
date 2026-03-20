@@ -69,8 +69,30 @@
           <div class="stat-label">Graduating</div>
         </div>
       </div>
+      <div class="hero-status-card">
+        <div class="hero-status-header">
+          <span class="hero-status-dot"></span>
+          <span class="hero-status-title">Current Status</span>
+        </div>
+        <div class="hero-status-row">
+          <span class="hero-status-key">Building</span>
+          <span class="hero-status-val"><strong>Vision Control Panel</strong> — CV + FSM</span>
+        </div>
+        <div class="hero-status-row">
+          <span class="hero-status-key">Open to</span>
+          <span class="hero-status-val"><strong>Summer 2026</strong> internships</span>
+        </div>
+        <div class="hero-status-row">
+          <span class="hero-status-key">Focus</span>
+          <span class="hero-status-val">Embedded · Applied AI · SWE</span>
+        </div>
+        <div class="hero-status-row">
+          <span class="hero-status-key">Location</span>
+          <span class="hero-status-val">McKinney, TX · Open to relocation</span>
+        </div>
+      </div>
     </div>
-
+ 
   </div>
 </section>
 
@@ -404,6 +426,48 @@
   </div>
 </div>
 
+<!-- FLOATING UPDATES BUBBLE -->
+<div class="fab-wrap">
+  <div class="fab-panel" id="fabPanel">
+    <div class="fab-panel-header">
+      <span class="fab-panel-title">Updates</span>
+      <button class="fab-panel-close" onclick="toggleFab()">&#x2715;</button>
+    </div>
+    <div class="fab-panel-feed">
+      <div class="fab-update">
+        <span class="fab-update-date">Mar 2026</span>
+        <div class="fab-update-text"><strong>L1 Rocketry launch complete.</strong> Post-flight telemetry analysis done — avionics held up under high-G.</div>
+        <span class="fab-update-tag">AIAA UTD · Embedded</span>
+      </div>
+      <div class="fab-update">
+        <span class="fab-update-date">Feb 2026</span>
+        <div class="fab-update-text"><strong>Vision Control Panel: FSM finalized.</strong> IDLE &#x2192; ARMED &#x2192; ACTIVE &#x2192; ALERT states fully implemented.</div>
+        <span class="fab-update-tag">Personal Project · CV</span>
+      </div>
+      <div class="fab-update">
+        <span class="fab-update-date">Jan 2026</span>
+        <div class="fab-update-text"><strong>Joined Cybersecurity Club UTD</strong> as Logistics Officer.</div>
+        <span class="fab-update-tag">Leadership</span>
+      </div>
+      <div class="fab-update">
+        <span class="fab-update-date">Dec 2025</span>
+        <div class="fab-update-text"><strong>EPICS Solar project wrapped.</strong> Received UTDesign Special Commendation Award.</div>
+        <span class="fab-update-tag">EPICS · Award</span>
+      </div>
+      <div class="fab-update">
+        <span class="fab-update-date">Nov 2025</span>
+        <div class="fab-update-text"><strong>Built JiraMate at hackathon.</strong> Integrated Nemotron LLMs to auto-generate Jira user stories.</div>
+        <span class="fab-update-tag">Hackathon · Full-Stack</span>
+      </div>
+    </div>
+  </div>
+  <button class="fab-btn" id="fabBtn" onclick="toggleFab()" aria-label="Updates">
+    <span class="fab-btn-dot"></span>
+    <span class="fab-btn-label">Updates</span>
+  </button>
+</div>
+ 
 <script src="assets/js/script.js"></script>
 </body>
 </html>
+ 
