@@ -344,8 +344,9 @@ h2.section-title {
   transform: translateY(-2px);
 }
 .project-card::after {
-  content: '↗'; position: absolute; top: 1.5rem; right: 1.5rem;
+  content: '↗︎'; position: absolute; top: 1.5rem; right: 1.5rem;
   font-size: 0.9rem; color: var(--accent); transition: transform 0.2s;
+  font-family: sans-serif; font-style: normal;
 }
 .project-card:hover::after { transform: translate(2px, -2px); }
 
@@ -564,60 +565,47 @@ h3.project-title {
    ABOUT
    ============================================================ */
 #about { border-bottom: 1px solid var(--border); }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-@media (max-width: 680px) { .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
-
+.about-grid { max-width: 560px; }
+ 
 .about-text p {
   font-size: 0.95rem; color: var(--text-2);
   line-height: 1.85; margin-bottom: 1.1rem; font-weight: 300;
 }
 .about-text p:last-child { margin-bottom: 0; }
 .about-text strong { color: var(--text); font-weight: 500; }
-
-/* Featured core skills — large prominent row */
-.skills-featured {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  margin-top: 0.5rem; margin-bottom: 0.25rem;
+ 
+/* ============================================================
+   SKILLS
+   ============================================================ */
+#skills { border-bottom: 1px solid var(--border); }
+#skills .section-title { margin-bottom: 2rem; }
+ 
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 4rem;
 }
-.skill-featured {
-  display: inline-block;
-  font-family: 'Instrument Serif', serif;
-  font-size: 1.25rem; color: var(--text);
-  background: var(--bg-3);
-  border: 1px solid var(--border-hover);
-  border-radius: 10px;
-  padding: 10px 22px;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
-  transition: border-color 0.2s, background 0.2s;
+ 
+@media (max-width: 680px) {
+  .skills-grid { grid-template-columns: 1fr; gap: 1.75rem; }
 }
-.skill-featured:hover {
-  border-color: var(--accent);
-  background: var(--accent-dim);
-}
-
-/* Supporting skills */
-.skills-side { display: flex; flex-direction: column; }
-.skills-group { margin-bottom: 1.25rem; }
+ 
+.skills-group { display: flex; flex-direction: column; }
+.skills-group { margin-bottom: 0; }
 .skills-group-label {
   font-size: 0.67rem; font-weight: 500; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--text-3); margin-bottom: 0.6rem;
+  text-transform: uppercase; color: var(--text-3); margin-bottom: 0.65rem;
 }
-.skills-list { display: flex; flex-wrap: wrap; gap: 5px; }
+.skills-list { display: flex; flex-wrap: wrap; gap: 6px; }
 .skill-pill {
-  font-size: 0.75rem; color: var(--text-3); background: var(--bg-3);
-  border: 1px solid var(--border); border-radius: 100px; padding: 3px 11px;
+  font-size: 0.78rem; font-weight: 400;
+  color: var(--text-2); background: var(--bg-3);
+  border: 1px solid var(--border); border-radius: 100px;
+  padding: 5px 14px;
+  transition: border-color 0.2s, color 0.2s;
 }
-
-.involvement-list { list-style: none; }
-.involvement-list li {
-  font-size: 0.84rem; color: var(--text-2); padding: 0.55rem 0;
-  border-bottom: 1px solid var(--border);
-  display: flex; gap: 10px; align-items: baseline; font-weight: 300;
-}
-.involvement-list li:last-child { border-bottom: none; }
-.involvement-list li::before { content: '·'; color: var(--accent); font-size: 1.1rem; line-height: 1; flex-shrink: 0; }
-
+.skill-pill:hover { border-color: var(--border-hover); color: var(--text); }
+ 
 /* ============================================================
    CONTACT
    ============================================================ */
@@ -626,8 +614,8 @@ h3.project-title {
   background: var(--bg-2);
   border: 1px solid var(--border);
   border-radius: 14px;
-  padding: 1.5rem 1.75rem;
-  display: flex; flex-direction: column; cursor: pointer;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  display: flex; flex-direction: column;
   transition: background 0.2s, border-color 0.2s, transform 0.2s;
   position: relative;
 }
