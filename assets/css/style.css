@@ -848,6 +848,11 @@ footer p { font-size: 0.75rem; color: var(--text-3); }
  
 @media (max-width: 560px) {
   .fab-wrap { bottom: 20px; right: 16px; }
-  .fab-panel { width: calc(100vw - 32px); }
+  .fab-panel { width: calc(100vw - 32px); max-height: 60vh; }
+  .fab-panel-feed { max-height: calc(60vh - 52px); }
 }
  
+/* Prevent FAB from covering page content on mobile */
+@media (max-width: 560px) {
+  main { padding-bottom: 80px; }
+}
