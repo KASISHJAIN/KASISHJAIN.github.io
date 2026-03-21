@@ -735,6 +735,7 @@ footer p { font-size: 0.75rem; color: var(--text-3); }
 .hero-status-val { color: var(--text-2); font-weight: 300; line-height: 1.4; }
 .hero-status-val strong { color: var(--text); font-weight: 500; }
  
+
 /* ============================================================
    FLOATING UPDATES BUBBLE (FAB)
    ============================================================ */
@@ -745,7 +746,8 @@ footer p { font-size: 0.75rem; color: var(--text-3); }
   display: flex; flex-direction: column; align-items: flex-end; gap: 12px;
   pointer-events: none;
 }
-
+ 
+.fab-btn,
 .fab-panel.open {
   pointer-events: all;
 }
@@ -852,12 +854,9 @@ footer p { font-size: 0.75rem; color: var(--text-3); }
 .fab-btn-label { letter-spacing: 0.02em; }
  
 @media (max-width: 560px) {
-  .fab-wrap { bottom: 20px; right: 16px; }
-  .fab-panel { width: calc(100vw - 32px); max-height: 60vh; }
-  .fab-panel-feed { max-height: calc(60vh - 52px); }
-}
- 
-/* Prevent FAB from covering page content on mobile */
-@media (max-width: 560px) {
-  main { padding-bottom: 80px; }
+  .fab-wrap { bottom: 16px; right: 16px; }
+  .fab-panel { width: calc(100vw - 32px); max-height: 55vh; }
+  .fab-panel-feed { max-height: calc(55vh - 52px); }
+  .fab-btn { padding: 8px 14px; font-size: 0.72rem; }
+  main { padding-bottom: 72px; }
 }
