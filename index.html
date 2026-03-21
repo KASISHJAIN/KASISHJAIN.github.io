@@ -15,7 +15,7 @@
   <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links" id="nav-links"> 
+  <ul class="nav-links" id="nav-links">
     <li><a href="#hero" onclick="closeMenu()">Home</a></li>
     <li><a href="#about" onclick="closeMenu()">About</a></li>
     <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
@@ -25,7 +25,7 @@
   </ul>
 </nav>
 <div class="nav-mobile-overlay" id="nav-overlay" onclick="closeMenu()"></div>
-
+ 
 <canvas id="hero-canvas"></canvas>
 <main>
 
@@ -51,45 +51,15 @@
         <a href="#projects" class="btn-primary">View my work →</a>
         <a href="#contact" class="btn-ghost">Get in touch</a>
       </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-number">7+</div>
-          <div class="stat-label">Projects</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">11</div>
-          <div class="stat-label">Campus orgs</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">3</div>
-          <div class="stat-label">Leadership roles</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">'28</div>
-          <div class="stat-label">Graduating</div>
-        </div>
-      </div>
+      <!-- Stats rendered by script.js from HERO.stats in content.js -->
+      <div class="hero-stats" id="hero-stats"></div>
+      <!-- Status card rendered by script.js from HERO.status in content.js -->
       <div class="hero-status-card">
         <div class="hero-status-header">
           <span class="hero-status-dot"></span>
           <span class="hero-status-title">Current Status</span>
         </div>
-        <div class="hero-status-row">
-          <span class="hero-status-key">Building</span>
-          <span class="hero-status-val"><strong>Memoir</strong> — Mobile AI<br><strong>BrailLearn</strong> — Wearable Hardware</span>
-        </div>
-        <div class="hero-status-row">
-          <span class="hero-status-key">Open to</span>
-          <span class="hero-status-val"><strong>Summer 2026</strong> internships</span>
-        </div>
-        <div class="hero-status-row">
-          <span class="hero-status-key">Focus</span>
-          <span class="hero-status-val">Embedded · Applied AI · SWE</span>
-        </div>
-        <div class="hero-status-row">
-          <span class="hero-status-key">Location</span>
-          <span class="hero-status-val">McKinney, TX · Open to relocation</span>
-        </div>
+        <div id="hero-status-rows"></div>
       </div>
     </div>
  
@@ -101,10 +71,8 @@
   <div class="container-wide">
     <h2 class="section-title">About Me</h2>
     <div class="about-grid">
-      <div class="about-text">
-        <p>I'm <strong>Kasish Jain</strong>, a Computer Engineering student at UT Dallas (Collegium V Honors), GPA 3.52. Recipient of the <strong>Academic Excellence Scholarship</strong> and <strong>UTDesign EPICS Special Commendation Award</strong>. I build at the intersection of embedded systems, computer vision, and software — problems where a bug has physical consequences and reliability isn't optional.</p>
-        <p>Looking for <strong>Summer 2026 internships</strong> in embedded systems, software engineering, or applied AI. I bring hardware intuition, software depth, and a bias toward building things that actually work.</p>
-      </div>
+      <!-- Paragraphs rendered by script.js from ABOUT in content.js -->
+      <div class="about-text" id="about-text"></div>
     </div>
   </div>
 </section>
@@ -113,82 +81,8 @@
 <section id="projects">
   <div class="container-wide">
     <h2 class="section-title">Projects</h2>
-    <div class="projects-grid">
- 
-      <div class="project-card" onclick="openModal('vision')">
-        <span class="project-tag">Computer Vision · Embedded Systems · Mar 2026</span>
-        <h3 class="project-title">Vision-Based Secure Control Panel</h3>
-        <p class="project-summary">Real-time gesture recognition that controls hardware — architected to fail safely, never dangerously.</p>
-        <div class="project-tech">
-          <span class="tech-tag">OpenCV</span><span class="tech-tag">MediaPipe</span>
-          <span class="tech-tag">Python</span><span class="tech-tag">Arduino</span><span class="tech-tag">FSM</span>
-        </div>
-      </div>
- 
-      <div class="project-card" onclick="openModal('memoir')">
-        <span class="project-tag">Mobile · AI · Flask · ACM Projects</span>
-        <h3 class="project-title">Memoir — Digital Memory Preservation App</h3>
-        <p class="project-summary">Scan physical greeting cards with OCR, auto-tag memories using AI, and find them instantly with semantic vector search — all organized in a personal digital archive.</p>
-        <div class="project-tech">
-          <span class="tech-tag">React Native</span><span class="tech-tag">Supabase</span>
-          <span class="tech-tag">OpenAI API</span><span class="tech-tag">OCR</span>
-        </div>
-      </div>
- 
-      <div class="project-card" onclick="openModal('rocketry')">
-        <span class="project-tag">Embedded · Hardware · Aerospace · Sep–Dec 2025</span>
-        <h3 class="project-title">L1 Rocketry Avionics System</h3>
-        <p class="project-summary">Onboard avionics architected for a high-G launch environment — where hardware reliability and software precision have immediate physical consequences.</p>
-        <div class="project-tech">
-          <span class="tech-tag">ESP32</span><span class="tech-tag">BMP280</span>
-          <span class="tech-tag">C/C++</span><span class="tech-tag">SD Logging</span>
-        </div>
-      </div>
- 
-      <div class="project-card" onclick="openModal('solar')">
-        <span class="project-tag">Systems Engineering · BIM · Jan–Dec 2025</span>
-        <h3 class="project-title">Solar-Powered Water Purification</h3>
-        <p class="project-summary">Designed a 3D digital twin and off-grid 10.3 kW solar plant for a containerized purification system — Special Commendation Award.</p>
-        <a href="https://veraaquaveravita.org/news/out-of-thin-air-how-vavv-and-utd-students-are-bringing-clean-water-to-peru" target="_blank" class="press-badge" onclick="event.stopPropagation()">
-          <span class="press-badge-dot"></span>Featured in Vera Aqua Vera Vita &#x2197;&#xFE0E;
-        </a>
-        <div class="project-tech">
-          <span class="tech-tag">Fusion 360</span><span class="tech-tag">Revit</span>
-          <span class="tech-tag">Solar Systems</span><span class="tech-tag">CAD</span>
-        </div>
-      </div>
- 
-      <div class="project-card" onclick="openModal('jiramate')">
-        <span class="project-tag">AI/LLMs · Full-Stack · Hackathon · Nov 2025</span>
-        <h3 class="project-title">JiraMate — AI Workflow Automation</h3>
-        <p class="project-summary">Built a full-stack AI partner for Jira that automates backlog grooming and user story generation — transforming manual PM overhead into 5-second automated insights.</p>
-        <div class="project-tech">
-          <span class="tech-tag">React</span><span class="tech-tag">Node.js</span>
-          <span class="tech-tag">Firebase</span><span class="tech-tag">LLM API</span>
-        </div>
-      </div>
- 
-      <div class="project-card" onclick="openModal('pantryfy')">
-        <span class="project-tag">Full-Stack · AI Integration · April 2025</span>
-        <h3 class="project-title">Pantry-fy — Intelligent Recipe Discovery</h3>
-        <p class="project-summary">A fridge-first search engine that eliminates dinner fatigue by transforming available ingredients into gourmet meal plans.</p>
-        <div class="project-tech">
-          <span class="tech-tag">React</span><span class="tech-tag">Express.js</span>
-          <span class="tech-tag">MongoDB</span><span class="tech-tag">Node.js</span>
-        </div>
-      </div>
- 
-      <div class="project-card" onclick="openModal('braille')">
-        <span class="project-tag">Wearable Tech · Embedded · Assistive Technology</span>
-        <h3 class="project-title">BrailLearn — Assistive Braille Input Glove</h3>
-        <p class="project-summary">A wearable digital pen for the visually impaired — converting tactile finger movements into real-time digital text and audio for under $100.</p>
-        <div class="project-tech">
-          <span class="tech-tag">Embedded</span><span class="tech-tag">Sensors</span>
-          <span class="tech-tag">Prototyping</span><span class="tech-tag">Accessibility</span>
-        </div>
-      </div>
- 
-    </div>
+    <!-- Cards rendered by script.js from PROJECTS in content.js -->
+    <div class="projects-grid" id="projects-grid"></div>
   </div>
 </section>
 
@@ -196,93 +90,8 @@
 <section id="involvement">
   <div class="container-wide">
     <h2 class="section-title">Involvements</h2>
-    <div class="inv-grid">
- 
-      <div class="inv-card">
-        <div class="inv-top"><span class="inv-num">01</span><span class="inv-date">Sep 2025–Present</span></div>
-        <div class="inv-org">AIAA UTD</div>
-        <div class="inv-role">Comet Rocketry L1 · Avionics</div>
-        <div class="inv-desc">Designing ESP32-based avionics and telemetry logging for a high-G launch. Currently conducting pre-flight system validation and sensor stress-testing.</div>
-      </div>
- 
-      <div class="inv-card">
-        <div class="inv-top"><span class="inv-num">02</span><span class="inv-date">Jan–Dec 2025</span></div>
-        <div class="inv-org">EPICS UTDesign</div>
-        <div class="inv-role">Financial Officer · Solar Water Purification</div>
-        <div class="inv-desc">Co-designed a solar-powered clean water system for rural Peru. Received EPICS Special Commendation Award.</div>
-      </div>
- 
-      <div class="inv-card">
-        <div class="inv-top"><span class="inv-num">03</span><span class="inv-date">Jan 2026–Present</span></div>
-        <div class="inv-org">ACM Projects UTD</div>
-        <div class="inv-role">Projects · Memoir · Mobile Dev</div>
-        <div class="inv-desc">Building Memoir — a digital memory preservation app — as part of ACM Projects.</div>
-      </div>
- 
-      <div class="inv-card">
-        <div class="inv-top"><span class="inv-num">04</span><span class="inv-date">Sep 2025–Present</span></div>
-        <div class="inv-org">Society of Women Engineers</div>
-        <div class="inv-role">Braille Input Glove</div>
-        <div class="inv-desc">Prototyping an assistive glove that translates finger-movement Braille to text and audio.</div>
-      </div>
- 
-      <div class="inv-card">
-        <div class="inv-top"><span class="inv-num">05</span><span class="inv-date">Aug 2025–Present</span></div>
-        <div class="inv-org">IEEE UTD</div>
-        <div class="inv-role">Initiatives Officer &amp; Tutor · CE 2310</div>
-        <div class="inv-desc">Initiatives Officer: supporting event setup, logistics, and on-site execution while gathering feedback to improve future events. Tutor: selected to tutor Digital Systems (CE 2310) covering logic design, Boolean algebra, and circuit behavior.</div>
-      </div>
- 
-      <div class="inv-card">
-        <div class="inv-top"><span class="inv-num">06</span><span class="inv-date">May 2024–Dec 2025</span></div>
-        <div class="inv-org">CodePath</div>
-        <div class="inv-role">College Peer Mentor · Web, Cyber, DSA</div>
-        <div class="inv-desc">Mentored students as a College Peer Mentor. Earned CodePath certifications in Web Development, Cybersecurity, and Data Structures & Algorithms.</div>
-      </div>
- 
-      <div class="inv-card">
-        <div class="inv-top"><span class="inv-num">07</span><span class="inv-date">Sep 2025–Present</span></div>
-        <div class="inv-org">Cybersecurity Club UTD</div>
-        <div class="inv-role">Logistics Officer</div>
-        <div class="inv-desc">Managing operations, procurement, and event coordination for technical workshops and skill-building sessions.</div>
-      </div>
- 
-      <div class="inv-card">
-        <div class="inv-top"><span class="inv-num">08</span><span class="inv-date">Feb 2026–Present</span></div>
-        <div class="inv-org">Girls Who Code UTD</div>
-        <div class="inv-role">Events Officer</div>
-        <div class="inv-desc">Organizing events to support and grow the women in computing community at UTD.</div>
-      </div>
- 
-      <div class="inv-card">
-        <div class="inv-top"><span class="inv-num">09</span><span class="inv-date">Sep–Nov 2025</span></div>
-        <div class="inv-org">Ladies in Tech Mentoring</div>
-        <div class="inv-role">Mentor · Freshman Advising</div>
-        <div class="inv-desc">Mentoring freshman students on course navigation, academic transitions, and early engineering challenges.</div>
-      </div>
- 
-      <div class="inv-card">
-        <div class="inv-top"><span class="inv-num">10</span><span class="inv-date">Jan-May 2025</span></div>
-        <div class="inv-org">ACM Mentorship Program</div>
-        <div class="inv-role">Mentee</div>
-        <div class="inv-desc">Receiving guidance on technical skills and career preparation from experienced engineers.</div>
-      </div>
- 
-      <div class="inv-card">
-        <div class="inv-top"><span class="inv-num">11</span><span class="inv-date">Oct–Dec 2025</span></div>
-        <div class="inv-org">SASE × Texas Instruments</div>
-        <div class="inv-role">Mentee · TI Mentoring Program</div>
-        <div class="inv-desc">Gaining insight into lab-based silicon validation and post-fabrication testing workflows from TI engineers.</div>
-      </div>
-
-      <div class="inv-card">
-        <div class="inv-top"><span class="inv-num">12</span><span class="inv-date">Jan-May 2025</span></div>
-        <div class="inv-org">UTD Road Warriors Mentorship Program</div>
-        <div class="inv-role">Mentee · UTD Road Warriors</div>
-        <div class="inv-desc">Engaged in commuter community-building events and received mentorship focused on balancing academics, involvement, and personal growth.</div>
-      </div>
- 
-    </div>
+    <!-- Cards rendered by script.js from INVOLVEMENT in content.js -->
+    <div class="inv-grid" id="inv-grid"></div>
   </div>
 </section>
  
@@ -290,115 +99,20 @@
 <section id="skills">
   <div class="container-wide">
     <h2 class="section-title">Skills</h2>
-    <div class="skills-grid">
-
-      <div class="skills-group">
-        <div class="skills-group-label">Languages</div>
-        <div class="skills-list">
-          <span class="skill-pill">Python</span>
-          <span class="skill-pill">C / C++</span>
-          <span class="skill-pill">Java</span>
-          <span class="skill-pill">JavaScript</span>
-          <span class="skill-pill">TypeScript</span>
-          <span class="skill-pill">SQL</span>
-          <span class="skill-pill">MATLAB</span>
-          <span class="skill-pill">Kotlin / Android</span>
-          <span class="skill-pill">HTML / CSS</span>
-        </div>
-      </div>
-
-      <div class="skills-group">
-        <div class="skills-group-label">Tools &amp; Design</div>
-        <div class="skills-list">
-          <span class="skill-pill">Autodesk Revit</span>
-          <span class="skill-pill">Fusion 360</span>
-          <span class="skill-pill">Git / GitHub</span>
-          <span class="skill-pill">Jira</span>
-          <span class="skill-pill">Figma</span>
-          <span class="skill-pill">VS Code</span>
-          <span class="skill-pill">Cursor</span>
-          <span class="skill-pill">Eclipse</span>
-          <span class="skill-pill">Excel (Advanced)</span>
-        </div>
-      </div>
- 
-      <div class="skills-group">
-        <div class="skills-group-label">AI, ML &amp; Computer Vision</div>
-        <div class="skills-list">
-          <span class="skill-pill">OpenCV</span>
-          <span class="skill-pill">MediaPipe</span>
-          <span class="skill-pill">Prompt Engineering</span>
-          <span class="skill-pill">LLM Integration</span>
-          <span class="skill-pill">Semantic Vector Search</span>
-          <span class="skill-pill">pgvector</span>
-          <span class="skill-pill">OpenAI Embeddings</span>
-          <span class="skill-pill">Nemotron / OpenRouter</span>
-          <span class="skill-pill">GPT-4o / GPT-3.5</span>
-          <span class="skill-pill">Gemini</span>
-          <span class="skill-pill">NumPy</span>
-          <span class="skill-pill">Matplotlib</span>
-        </div>
-      </div>
- 
-      <div class="skills-group">
-        <div class="skills-group-label">Embedded &amp; Hardware</div>
-        <div class="skills-list">
-          <span class="skill-pill">ESP32 / ESP8266</span>
-          <span class="skill-pill">Arduino</span>
-          <span class="skill-pill">MSP430</span>
-          <span class="skill-pill">FSM Design</span>
-          <span class="skill-pill">I2C / SPI / UART</span>
-          <span class="skill-pill">Force-Sensitive Resistors</span>
-          <span class="skill-pill">BMP280</span>
-          <span class="skill-pill">Soldering</span>
-          <span class="skill-pill">Oscilloscope</span>
-          <span class="skill-pill">Multimeter</span>
-          <span class="skill-pill">Schematic Capture</span>
-          <span class="skill-pill">Solar &amp; Battery Systems</span>
-          <span class="skill-pill">Thermal Load Analysis</span>
-          <span class="skill-pill">SD Logging</span>
-        </div>
-      </div>
-
-      <div class="skills-group">
-        <div class="skills-group-label">Software &amp; Full-Stack</div>
-        <div class="skills-list">
-          <span class="skill-pill">React</span>
-          <span class="skill-pill">React Native</span>
-          <span class="skill-pill">Expo Router</span>
-          <span class="skill-pill">Node.js</span>
-          <span class="skill-pill">Express.js</span>
-          <span class="skill-pill">Flask</span>
-          <span class="skill-pill">Tailwind CSS</span>
-          <span class="skill-pill">Bootstrap</span>
-          <span class="skill-pill">Supabase</span>
-          <span class="skill-pill">Firebase</span>
-          <span class="skill-pill">MongoDB</span>
-          <span class="skill-pill">PostgreSQL</span>
-          <span class="skill-pill">GitHub Actions / CI-CD</span>
-          <span class="skill-pill">Linux</span>
-        </div>
-      </div>
-    </div>
+    <!-- Pills rendered by script.js from SKILLS in content.js -->
+    <div class="skills-grid" id="skills-grid"></div>
   </div>
 </section>
-
+ 
 <!-- CONTACT -->
 <section id="contact">
   <div class="container-wide">
     <div class="contact-inner">
-      <h2 class="section-title">Open to internships<br>for Summer 2026.</h2>
-      <p class="section-sub">Interested in embedded systems, software engineering, and applied AI. If you're building something interesting, reach out.</p>
-      <div class="contact-press">
-        <span class="press-badge-dot"></span>
-        <span>As featured in </span>
-        <a href="https://veraaquaveravita.org/news/out-of-thin-air-how-vavv-and-utd-students-are-bringing-clean-water-to-peru" target="_blank">Vera Aqua Vera Vita ↗︎</a>
-      </div>
-      <div class="contact-links">
-        <a href="mailto:iamkasishjain@gmail.com" class="contact-link primary">Email me →</a>
-        <a href="https://linkedin.com/in/kasishjain" target="_blank" class="contact-link outline">LinkedIn ↗︎</a>
-        <a href="https://github.com/kasishjain" target="_blank" class="contact-link outline">GitHub ↗︎</a>
-      </div>
+      <!-- All rendered by script.js from CONTACT in content.js -->
+      <h2 class="section-title" id="contact-heading"></h2>
+      <p class="section-sub" id="contact-sub"></p>
+      <div class="contact-press" id="contact-press"></div>
+      <div class="contact-links" id="contact-links"></div>
     </div>
   </div>
 </section>
@@ -418,6 +132,15 @@
   </div>
 </div>
 
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modalBox">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
 <!-- FLOATING UPDATES BUBBLE -->
 <div class="fab-wrap">
   <div class="fab-panel" id="fabPanel">
@@ -425,75 +148,8 @@
       <span class="fab-panel-title">Updates</span>
       <button class="fab-panel-close" onclick="toggleFab()">&#x2715;</button>
     </div>
-    <div class="fab-panel-feed">
- 
-      <div class="fab-update">
-        <span class="fab-update-date">Apr 2026</span>
-        <div class="fab-update-text"><strong>L1 Rocketry Launch — Upcoming.</strong> Finalizing avionics hardware for the scheduled flight window.</div>
-        <span class="fab-update-tag">AIAA UTD · Embedded · Upcoming</span>
-      </div>
- 
-      <div class="fab-update">
-        <span class="fab-update-date">Feb 2026</span>
-        <div class="fab-update-text"><strong>Vision Control Panel Integration.</strong> Completed the Python-to-Arduino bridge, implementing stable serial communication and FSM-enforced safety protocols.</div>
-        <span class="fab-update-tag">Personal Project · CV · Embedded</span>
-      </div>
- 
-      <div class="fab-update">
-        <span class="fab-update-date">Feb 2026</span>
-        <div class="fab-update-text"><strong>Joined Girls Who Code UTD.</strong> Appointed Events Officer — directing community-building initiatives and events for women in computing.</div>
-        <span class="fab-update-tag">Leadership · GWC</span>
-      </div>
- 
-      <div class="fab-update">
-        <span class="fab-update-date">Jan 2026</span>
-        <div class="fab-update-text"><strong>Memoir (ACM Projects) Kickoff.</strong> Started backend development for semantic memory search using pgvector and Flask for automated card digitization.</div>
-        <span class="fab-update-tag">ACM Projects · AI · Flask</span>
-      </div>
- 
-      <div class="fab-update">
-        <span class="fab-update-date">Dec 2025</span>
-        <div class="fab-update-text"><strong>EPICS Solar Project Complete.</strong> Delivered full Revit 3D models and Construction Sheet Set. Received the Special Commendation Award.</div>
-        <span class="fab-update-tag">EPICS · Award · BIM</span>
-      </div>
- 
-      <div class="fab-update">
-        <span class="fab-update-date">Nov 2025</span>
-        <div class="fab-update-text"><strong>CodePath Certification Wave.</strong> Completed Web Development (WEB 101) and Cybersecurity (CYB 102) while serving as a College Peer Mentor.</div>
-        <span class="fab-update-tag">CodePath · Certifications</span>
-      </div>
- 
-      <div class="fab-update">
-        <span class="fab-update-date">Nov 2025</span>
-        <div class="fab-update-text"><strong>Built JiraMate at HackUTD.</strong> Shipped an AI tool using Node.js and Nemotron LLMs with a custom validation layer to transform non-deterministic AI output into structured Jira stories.</div>
-        <span class="fab-update-tag">Hackathon · Full-Stack · AI</span>
-      </div>
- 
-      <div class="fab-update">
-        <span class="fab-update-date">Sep 2025</span>
-        <div class="fab-update-text"><strong>Fall Involvement Surge.</strong> Joined AIAA Comet Rocketry (Avionics), SWE Assistive Tech (Braille Glove), and the Cybersecurity Club (Logistics Officer).</div>
-        <span class="fab-update-tag">Leadership · Embedded · Assistive Tech</span>
-      </div>
- 
-      <div class="fab-update">
-        <span class="fab-update-date">Sep 2025</span>
-        <div class="fab-update-text"><strong>Cybersecurity Club UTD.</strong> Appointed Logistics Officer — directing operational planning and resource management for the 2026 technical workshop series.</div>
-        <span class="fab-update-tag">Leadership · Cybersecurity</span>
-      </div>
- 
-      <div class="fab-update">
-        <span class="fab-update-date">Aug 2025</span>
-        <div class="fab-update-text"><strong>Technical Foundation.</strong> Completed CodePath TIP 102 (Data Structures &amp; Algorithms) and CYB 101 (Cybersecurity Fundamentals).</div>
-        <span class="fab-update-tag">CodePath · DSA · Cybersecurity</span>
-      </div>
- 
-      <div class="fab-update">
-        <span class="fab-update-date">Jun 2025</span>
-        <div class="fab-update-text"><strong>TI Mentorship.</strong> Selected for the Texas Instruments Mentoring Program to study embedded systems and the semiconductor engineering pipeline.</div>
-        <span class="fab-update-tag">SASE · Texas Instruments · Embedded</span>
-      </div>
- 
-    </div>
+    <!-- Feed rendered by script.js from UPDATES in content.js -->
+    <div class="fab-panel-feed" id="fab-feed"></div>
   </div>
   <button class="fab-btn" id="fabBtn" onclick="toggleFab()" aria-label="Updates">
     <span class="fab-btn-dot"></span>
@@ -501,7 +157,8 @@
   </button>
 </div>
  
+<!-- content.js must load BEFORE script.js -->
+<script src="assets/js/content.js"></script>
 <script src="assets/js/script.js"></script>
 </body>
 </html>
- 
