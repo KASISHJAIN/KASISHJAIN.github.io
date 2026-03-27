@@ -44,7 +44,7 @@ const PROJECTS = {
     github: 'https://github.com/KASISHJAIN/Vision-Based-Secure-Control-Panel',
   },
   memoir: {
-    tag: 'Mobile · AI · Flask · ACM Projects · Jan 2025–Present',
+    tag: 'Mobile · AI · Flask · ACM Projects · Jan 2026–Present',
     title: 'Memoir — Digital Memory Preservation App',
     summary: 'Scan physical greeting cards with OCR, auto-tag memories using AI, and find them instantly with semantic vector search — all organized in a personal digital archive.',
     problem: "Handwritten greeting cards carry real emotional value but get lost, forgotten, or thrown away. There's no easy way to preserve and rediscover them. Memoir turns physical cards into a searchable, shareable digital collection.",
@@ -54,7 +54,7 @@ const PROJECTS = {
     github: 'https://github.com/kasishjain',
   },
   rocketry: {
-    tag: 'Embedded · Hardware · Aerospace · Sep–Dec 2025',
+    tag: 'Embedded · Hardware · Aerospace · Sep 2025- Present',
     title: 'L1 Rocketry Avionics System',
     summary: 'Onboard avionics architected for a high-G launch environment — where hardware reliability and software precision have immediate physical consequences.',
     problem: "High-acceleration launches create extreme physical stress that causes traditional electronics to fail. I needed to design an avionics suite that could maintain 100% sensor uptime and data integrity while subject to high-G forces, vibration, and constrained power and compute resources.",
