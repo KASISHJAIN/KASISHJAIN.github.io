@@ -120,16 +120,16 @@ const PROJECTS = {
 /* ── INVOLVEMENT ── */
 const INVOLVEMENT = [
   {
-    num: '01', date: 'Sep 2025–Present',
-    org: 'AIAA UTD',
-    role: 'Comet Rocketry L1 · Avionics',
-    desc: 'Designing ESP32-based avionics and telemetry logging for a high-G launch. Currently conducting pre-flight system validation and sensor stress-testing.',
+    num: '01', date: 'Mar 2026–Present',
+    org: 'Break Through Tech AI — Cornell Tech',
+    role: 'AI & ML Fellow',
+    desc: 'Selected as an AI & ML Fellow through Break Through Tech at Cornell Tech — a competitive program focused on applied machine learning and real-world AI system development. Engaging in hands-on project work, mentorship, and industry collaboration at the intersection of hardware-aware AI and responsible system design.',
   },
   {
-    num: '02', date: 'Jan–Dec 2025',
-    org: 'EPICS UTDesign',
-    role: 'Financial Officer · Solar Water Purification',
-    desc: 'Co-designed a solar-powered clean water system for rural Peru. Received EPICS Special Commendation Award.',
+    num: '02', date: 'Feb 2026–Present',
+    org: 'Girls Who Code UTD',
+    role: 'Events Officer',
+    desc: 'Organizing events to support and grow the women in computing community at UTD.',
   },
   {
     num: '03', date: 'Jan 2026–Present',
@@ -139,33 +139,33 @@ const INVOLVEMENT = [
   },
   {
     num: '04', date: 'Sep 2025–Present',
-    org: 'Society of Women Engineers',
-    role: 'Braille Input Glove',
-    desc: 'Prototyping an assistive glove that translates finger-movement Braille to text and audio.',
+    org: 'AIAA UTD',
+    role: 'Comet Rocketry L1 · Avionics',
+    desc: 'Designing ESP32-based avionics and telemetry logging for a high-G launch. Currently conducting pre-flight system validation and sensor stress-testing.',
   },
   {
-    num: '05', date: 'Aug 2025–Present',
-    org: 'IEEE UTD',
-    role: 'Initiatives Officer & Tutor · CE 2310',
-    desc: 'Initiatives Officer: supporting event setup, logistics, and on-site execution while gathering feedback to improve future events. Tutor: selected to tutor Digital Systems (CE 2310) covering logic design, Boolean algebra, and circuit behavior.',
-  },
-  {
-    num: '06', date: 'May 2024–Dec 2025',
-    org: 'CodePath',
-    role: 'College Peer Mentor · Web, Cyber, DSA',
-    desc: 'Mentored students as a College Peer Mentor. Earned CodePath certifications in Web Development, Cybersecurity, and Data Structures & Algorithms.',
-  },
-  {
-    num: '07', date: 'Sep 2025–Present',
+    num: '05', date: 'Sep 2025–Present',
     org: 'Cybersecurity Club UTD',
     role: 'Logistics Officer',
     desc: 'Managing operations, procurement, and event coordination for technical workshops and skill-building sessions.',
   },
   {
-    num: '08', date: 'Feb 2026–Present',
-    org: 'Girls Who Code UTD',
-    role: 'Events Officer',
-    desc: 'Organizing events to support and grow the women in computing community at UTD.',
+    num: '06', date: 'Sep 2025–Present',
+    org: 'Society of Women Engineers',
+    role: 'BrailLearn · Assistive Tech',
+    desc: 'Prototyping an assistive glove that translates finger-movement Braille to text and audio.',
+  },
+  {
+    num: '07', date: 'Aug 2025–Present',
+    org: 'IEEE UTD',
+    role: 'Initiatives Officer & Tutor · CE 2310',
+    desc: 'Initiatives Officer: supporting event setup, logistics, and on-site execution while gathering feedback to improve future events. Tutor: selected to tutor Digital Systems (CE 2310) covering logic design, Boolean algebra, and circuit behavior.',
+  },
+  {
+    num: '08', date: 'Oct–Dec 2025',
+    org: 'SASE × Texas Instruments',
+    role: 'Mentee · TI Mentoring Program',
+    desc: 'Gaining insight into lab-based silicon validation and post-fabrication testing workflows from TI engineers.',
   },
   {
     num: '09', date: 'Sep–Nov 2025',
@@ -174,28 +174,28 @@ const INVOLVEMENT = [
     desc: 'Mentoring freshman students on course navigation, academic transitions, and early engineering challenges.',
   },
   {
-    num: '10', date: 'Jan–May 2025',
+    num: '10', date: 'May 2024–Dec 2025',
+    org: 'CodePath',
+    role: 'College Peer Mentor · Web, Cyber, DSA',
+    desc: 'Mentored students as a College Peer Mentor. Earned CodePath certifications in Web Development, Cybersecurity, and Data Structures & Algorithms.',
+  },
+  {
+    num: '11', date: 'Jan–Dec 2025',
+    org: 'EPICS UTDesign',
+    role: 'Financial Officer · Solar Water Purification',
+    desc: 'Co-designed a solar-powered clean water system for rural Peru. Received EPICS Special Commendation Award.',
+  },
+  {
+    num: '12', date: 'Jan–May 2025',
     org: 'ACM Mentorship Program',
     role: 'Mentee',
     desc: 'Receiving guidance on technical skills and career preparation from experienced engineers.',
   },
   {
-    num: '11', date: 'Oct–Dec 2025',
-    org: 'SASE × Texas Instruments',
-    role: 'Mentee · TI Mentoring Program',
-    desc: 'Gaining insight into lab-based silicon validation and post-fabrication testing workflows from TI engineers.',
-  },
-  {
-    num: '12', date: 'Jan–May 2025',
+    num: '13', date: 'Jan–May 2025',
     org: 'UTD Road Warriors Mentorship Program',
     role: 'Mentee · UTD Road Warriors',
     desc: 'Engaged in commuter community-building events and received mentorship focused on balancing academics, involvement, and personal growth.',
-  },
-  {
-    num: '13', date: 'Mar 2026–Present',
-    org: 'Break Through Tech AI — Cornell Tech',
-    role: 'AI & ML Fellow',
-    desc: 'Selected as an AI & ML Fellow through Break Through Tech at Cornell Tech — a competitive program focused on applied machine learning and real-world AI system development. Engaging in hands-on project work, mentorship, and industry collaboration at the intersection of hardware-aware AI and responsible system design.',
   },
 ];
 
