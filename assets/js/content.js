@@ -10,7 +10,7 @@ const HERO = {
   tagline: 'Engineering reliable systems —<br>where hardware meets software.',
   bio: "Sophomore at UTD's Collegium V Honors College. I build at the intersection of embedded systems, computer vision, and real-world impact.",
   stats: [
-    { number: '7+', label: 'Projects' },
+    { number: '8+', label: 'Projects' },
     { number: '11', label: 'Campus orgs' },
     { number: '3',  label: 'Leadership roles' },
     { number: "'28", label: 'Graduating' },
@@ -104,6 +104,17 @@ const PROJECTS = {
     tech: ['ESP32', 'Force-Sensitive Resistors', 'C++', 'React', 'Braille Lookup Table', 'Wearable Hardware', 'Accessibility Design'],
     github: '',
   },
+  scrubai: {
+    tag: 'Computer Vision · AI/ML · Healthcare · WEHack UTD 2026 🏆 Track Winner',
+    title: 'ScrubAI — Surgical Scrub Protocol Verification System',
+    summary: 'Won our track at WEHack UTD. An offline real-time system that verifies the full 18-step surgical scrub protocol using speech recognition and computer vision — no internet required.',
+    problem: "Surgical infections are still often caused by missed steps that go unverified in high-pressure environments. Checklists exist, but enforcement is still manual and fallible. We needed to build a system that could verify the full surgical scrub protocol in real time — reliably, offline, and under real-world noise and hardware constraints.",
+    built: "Speech Recognition: Integrated OpenAI Whisper running fully offline to capture voice input during the scrub protocol. Built a custom context-aware matching engine to map natural language to the correct procedural step — handling variation in phrasing and background noise.\n\nComputer Vision: Used OpenCV optical flow to detect whether actual scrubbing motion was happening at the sink, providing a second layer of verification beyond voice input.\n\nSystem Architecture: Designed to run entirely offline on local hardware. Faced and overcame multiple hardware failures during the hackathon — screens that wouldn't power on, a Raspberry Pi that refused to cooperate, an Arduino OLED that broke under testing, Python dependency issues, and a demo pipeline that nearly collapsed right before judging.\n\nResilience Under Pressure: Both the speech system and vision system broke independently right before submission. We rebuilt them under pressure and ran the system split across two laptops to keep it stable for judging. Demonstrated the full system live despite heavy background noise causing intermittent recognition issues.",
+    insight: "The hard part of AI isn't the model — it's making the entire system survive reality. Every component worked in isolation; the challenge was making them work together under physical hardware failures, dependency conflicts, and live demo pressure. Building for failure first, not last, is what got us through.",
+    tech: ['OpenAI Whisper', 'OpenCV', 'Optical Flow', 'Python', 'Raspberry Pi', 'Speech Recognition', 'Computer Vision', 'Offline AI'],
+    github: 'https://github.com/akao335/WeHack2026',
+    devpost: 'https://devpost.com/software/vassavs',
+  },
 };
 
 /* ── INVOLVEMENT ── */
@@ -180,6 +191,12 @@ const INVOLVEMENT = [
     role: 'Mentee · UTD Road Warriors',
     desc: 'Engaged in commuter community-building events and received mentorship focused on balancing academics, involvement, and personal growth.',
   },
+  {
+    num: '13', date: 'Mar 2026–Present',
+    org: 'Break Through Tech AI — Cornell Tech',
+    role: 'AI & ML Fellow',
+    desc: 'Selected as an AI & ML Fellow through Break Through Tech at Cornell Tech — a competitive program focused on applied machine learning and real-world AI system development. Engaging in hands-on project work, mentorship, and industry collaboration at the intersection of hardware-aware AI and responsible system design.',
+  },
 ];
 
 /* ── SKILLS ── */
@@ -208,6 +225,16 @@ const SKILLS = [
 
 /* ── UPDATES (newest first) ── */
 const UPDATES = [
+  {
+    date: 'Mar 2026',
+    text: '<strong>Won WEHack UTD — ScrubAI.</strong> Built an offline surgical scrub verification system using OpenAI Whisper and OpenCV optical flow in 24 hours. Won our track.',
+    tag: 'WEHack UTD · Track Winner · CV · AI',
+  },
+  {
+    date: 'Mar 2026',
+    text: '<strong>Selected — Break Through Tech AI at Cornell Tech.</strong> Accepted as an AI & ML Fellow in a competitive program focused on applied ML and real-world AI system development.',
+    tag: 'Cornell Tech · AI/ML · Fellowship',
+  },
   {
     date: 'Apr 2026',
     text: '<strong>L1 Rocketry Launch — Upcoming.</strong> Finalizing avionics hardware for the scheduled flight window.',
