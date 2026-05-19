@@ -11,7 +11,7 @@ const HERO = {
   bio: "Sophomore at UTD's Collegium V Honors College. I build at the intersection of embedded systems, computer vision, and real-world impact.",
   stats: [
     { number: '8+', label: 'Projects' },
-    { number: '11', label: 'Campus orgs' },
+    { number: '12', label: 'Campus orgs' },
     { number: '3',  label: 'Leadership roles' },
     { number: "'28", label: 'Graduating' },
   ],
@@ -54,7 +54,7 @@ const PROJECTS = {
     github: 'https://github.com/kasishjain',
   },
   rocketry: {
-    tag: 'Embedded · Hardware · Aerospace · Sep 2025- Present',
+    tag: 'Embedded · Hardware · Aerospace · Sep 2025–Present',
     title: 'L1 Rocketry Avionics System',
     summary: 'Onboard avionics architected for a high-G launch environment — where hardware reliability and software precision have immediate physical consequences.',
     problem: "High-acceleration launches create extreme physical stress that causes traditional electronics to fail. I needed to design an avionics suite that could maintain 100% sensor uptime and data integrity while subject to high-G forces, vibration, and constrained power and compute resources.",
@@ -95,9 +95,11 @@ const PROJECTS = {
     github: 'https://devpost.com/software/pantry-fy',
   },
   braille: {
-    tag: 'Wearable Tech · Embedded Systems · Assistive Technology · Sep 2025–Present',
+    tag: 'Wearable Tech · Embedded Systems · Assistive Technology · Sep 2025–Present · 🏆 SWEMatch 1st Place',
     title: 'BrailLearn — Assistive Braille Input Glove',
-    summary: 'A wearable digital pen for the visually impaired — converting tactile finger movements into real-time digital text and audio for under $100.',
+    winner: true,
+    winnerLabel: '🏆 1st Place — SWEMatch',
+    summary: 'Won 1st place at SWEMatch. A wearable digital pen for the visually impaired — converting tactile finger movements into real-time digital text and audio for under $100.',
     problem: "For the 7 million visually impaired individuals in the US, digital text entry is often a choice between bulky, expensive ($1,000+) hardware or imprecise voice-to-text. Adults learning Braille later in life face a steep learning curve due to reduced neuroplasticity. We needed to create a portable, affordable, and intuitive invisible interface that allows users to type Braille anywhere without a physical desk.",
     built: "The Interface: Designed a dual-glove system mapping 6 fingers to the 2x3 Braille cell grid (Index/Middle/Ring on each hand).\n\nHardware Stack: Integrated Force-Sensitive Resistors (FSRs) and an ESP32 microcontroller to detect intentional pressure against any surface, filtering out accidental movements that traditional flex sensors might misinterpret.\n\nFirmware: Developed C++ logic on the ESP32 to handle multi-sensor threshold detection and map simultaneous finger-press combinations to a Braille lookup table.\n\nDigital Dashboard: Architected a React-based webpage to provide real-time visual and audio feedback, creating an interactive confirmation loop that accelerates the Braille learning curve.\n\nErgonomics & Safety: Collaborated on a multidisciplinary team (SWE) to ensure the hardware was integrated into lightweight, breathable spandex, focusing on tactile feedback and long-term wearable comfort.",
     insight: "In assistive technology, the hardest problems aren't electrical — they're ergonomic and cognitive. If the audio feedback lags by even a fraction of a second, the user's mental model breaks. This project taught me that functional is not enough — the technology must be invisible to truly empower the user.",
@@ -105,8 +107,10 @@ const PROJECTS = {
     github: '',
   },
   scrubai: {
-    tag: 'Computer Vision · AI/ML · Healthcare · WEHack UTD 2026 🏆 Track Winner',
+    tag: 'Computer Vision · AI/ML · Healthcare · WEHack UTD 2026 · 🏆 Track Winner',
     title: 'ScrubAI — Surgical Scrub Protocol Verification System',
+    winner: true,
+    winnerLabel: '🏆 Track Winner — WEHack UTD 2026',
     summary: 'Won our track at WEHack UTD. An offline real-time system that verifies the full 18-step surgical scrub protocol using speech recognition and computer vision — no internet required.',
     problem: "Surgical infections are still often caused by missed steps that go unverified in high-pressure environments. Checklists exist, but enforcement is still manual and fallible. We needed to build a system that could verify the full surgical scrub protocol in real time — reliably, offline, and under real-world noise and hardware constraints.",
     built: "Speech Recognition: Integrated OpenAI Whisper running fully offline to capture voice input during the scrub protocol. Built a custom context-aware matching engine to map natural language to the correct procedural step — handling variation in phrasing and background noise.\n\nComputer Vision: Used OpenCV optical flow to detect whether actual scrubbing motion was happening at the sink, providing a second layer of verification beyond voice input.\n\nSystem Architecture: Designed to run entirely offline on local hardware. Faced and overcame multiple hardware failures during the hackathon — screens that wouldn't power on, a Raspberry Pi that refused to cooperate, an Arduino OLED that broke under testing, Python dependency issues, and a demo pipeline that nearly collapsed right before judging.\n\nResilience Under Pressure: Both the speech system and vision system broke independently right before submission. We rebuilt them under pressure and ran the system split across two laptops to keep it stable for judging. Demonstrated the full system live despite heavy background noise causing intermittent recognition issues.",
@@ -120,79 +124,85 @@ const PROJECTS = {
 /* ── INVOLVEMENT ── */
 const INVOLVEMENT = [
   {
-    num: '01', date: 'Mar 2026–Present',
+    num: '01', date: 'Summer 2026',
+    org: 'UTD Orientation Leader',
+    role: 'Orientation Leader',
+    desc: 'Selected as a UTD Orientation Leader — guiding incoming students through the transition to university life and representing the Comet community.',
+  },
+  {
+    num: '02', date: 'Mar 2026–Present',
     org: 'Break Through Tech AI — Cornell Tech',
     role: 'AI & ML Fellow',
     desc: 'Selected as an AI & ML Fellow through Break Through Tech at Cornell Tech — a competitive program focused on applied machine learning and real-world AI system development. Engaging in hands-on project work, mentorship, and industry collaboration at the intersection of hardware-aware AI and responsible system design.',
   },
   {
-    num: '02', date: 'Feb 2026–Present',
+    num: '03', date: 'Feb 2026–Present',
     org: 'Girls Who Code UTD',
     role: 'Events Officer',
     desc: 'Organizing events to support and grow the women in computing community at UTD.',
   },
   {
-    num: '03', date: 'Jan 2026–Present',
+    num: '04', date: 'Jan 2026–Present',
     org: 'ACM Projects UTD',
     role: 'Projects · Memoir · Mobile Dev',
     desc: 'Building Memoir — a digital memory preservation app — as part of ACM Projects.',
   },
   {
-    num: '04', date: 'Sep 2025–Present',
+    num: '05', date: 'Sep 2025–Present',
     org: 'AIAA UTD',
     role: 'Comet Rocketry L1 · Avionics',
     desc: 'Designing ESP32-based avionics and telemetry logging for a high-G launch. Currently conducting pre-flight system validation and sensor stress-testing.',
   },
   {
-    num: '05', date: 'Sep 2025–Present',
+    num: '06', date: 'Sep 2025–Present',
     org: 'Cybersecurity Club UTD',
     role: 'Logistics Officer',
     desc: 'Managing operations, procurement, and event coordination for technical workshops and skill-building sessions.',
   },
   {
-    num: '06', date: 'Sep 2025–Present',
+    num: '07', date: 'Sep 2025–Present',
     org: 'Society of Women Engineers',
     role: 'BrailLearn · Assistive Tech',
-    desc: 'Prototyping an assistive glove that translates finger-movement Braille to text and audio.',
+    desc: 'Prototyping an assistive glove that translates finger-movement Braille to text and audio. Won 1st place at SWEMatch.',
   },
   {
-    num: '07', date: 'Aug 2025–Present',
+    num: '08', date: 'Aug 2025–Present',
     org: 'IEEE UTD',
     role: 'Initiatives Officer & Tutor · CE 2310',
     desc: 'Initiatives Officer: supporting event setup, logistics, and on-site execution while gathering feedback to improve future events. Tutor: selected to tutor Digital Systems (CE 2310) covering logic design, Boolean algebra, and circuit behavior.',
   },
   {
-    num: '08', date: 'Oct–Dec 2025',
+    num: '09', date: 'Oct–Dec 2025',
     org: 'SASE × Texas Instruments',
     role: 'Mentee · TI Mentoring Program',
     desc: 'Gaining insight into lab-based silicon validation and post-fabrication testing workflows from TI engineers.',
   },
   {
-    num: '09', date: 'Sep–Nov 2025',
+    num: '10', date: 'Sep–Nov 2025',
     org: 'Ladies in Tech Mentoring',
     role: 'Mentor · Freshman Advising',
     desc: 'Mentoring freshman students on course navigation, academic transitions, and early engineering challenges.',
   },
   {
-    num: '10', date: 'May 2024–Dec 2025',
+    num: '11', date: 'May 2024–Dec 2025',
     org: 'CodePath',
     role: 'College Peer Mentor · Web, Cyber, DSA',
     desc: 'Mentored students as a College Peer Mentor. Earned CodePath certifications in Web Development, Cybersecurity, and Data Structures & Algorithms.',
   },
   {
-    num: '11', date: 'Jan–Dec 2025',
+    num: '12', date: 'Jan–Dec 2025',
     org: 'EPICS UTDesign',
     role: 'Financial Officer · Solar Water Purification',
     desc: 'Co-designed a solar-powered clean water system for rural Peru. Received EPICS Special Commendation Award.',
   },
   {
-    num: '12', date: 'Jan–May 2025',
+    num: '13', date: 'Jan–May 2025',
     org: 'ACM Mentorship Program',
     role: 'Mentee',
     desc: 'Receiving guidance on technical skills and career preparation from experienced engineers.',
   },
   {
-    num: '13', date: 'Jan–May 2025',
+    num: '14', date: 'Jan–May 2025',
     org: 'UTD Road Warriors Mentorship Program',
     role: 'Mentee · UTD Road Warriors',
     desc: 'Engaged in commuter community-building events and received mentorship focused on balancing academics, involvement, and personal growth.',
@@ -225,6 +235,16 @@ const SKILLS = [
 
 /* ── UPDATES (newest first) ── */
 const UPDATES = [
+  {
+    date: 'May 2026',
+    text: '<strong>UTD Orientation Leader — Upcoming.</strong> Selected as a UTD Orientation Leader for Summer 2026 — guiding incoming students through their transition to university life.',
+    tag: 'Leadership · UTD · Orientation',
+  },
+  {
+    date: 'Apr 2026',
+    text: '<strong>BrailLearn — Won 1st Place at SWEMatch.</strong> Our assistive Braille input glove won first place at SWEMatch, recognized for its impact in accessible wearable technology.',
+    tag: 'SWEMatch · 1st Place · Assistive Tech',
+  },
   {
     date: 'Mar 2026',
     text: '<strong>Won WEHack UTD — ScrubAI.</strong> Built an offline surgical scrub verification system using OpenAI Whisper and OpenCV optical flow in 24 hours. Won our track.',
@@ -272,13 +292,8 @@ const UPDATES = [
   },
   {
     date: 'Sep 2025',
-    text: '<strong>Fall Involvement Surge.</strong> Joined AIAA Comet Rocketry (Avionics), SWE Assistive Tech (Braille Glove), and the Cybersecurity Club (Logistics Officer).',
+    text: '<strong>Fall Involvement Surge.</strong> Joined AIAA Comet Rocketry (Avionics), SWE Assistive Tech (BrailLearn), and the Cybersecurity Club (Logistics Officer).',
     tag: 'Leadership · Embedded · Assistive Tech',
-  },
-  {
-    date: 'Sep 2025',
-    text: '<strong>Cybersecurity Club UTD.</strong> Appointed Logistics Officer — directing operational planning and resource management for the 2026 technical workshop series.',
-    tag: 'Leadership · Cybersecurity',
   },
   {
     date: 'Aug 2025',

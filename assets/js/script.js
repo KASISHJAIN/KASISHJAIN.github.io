@@ -57,7 +57,6 @@
       }
     }
   }
-  
 
   function draw(t) {
     ctx.clearRect(0, 0, W, H);
@@ -225,16 +224,23 @@
   const grid = document.getElementById('projects-grid');
   if (!grid) return;
  
-  const ORDER = ['scrubai', 'vision', 'memoir', 'rocketry', 'solar', 'jiramate', 'pantryfy', 'braille'];
+  const ORDER = ['scrubai', 'braille', 'vision', 'memoir', 'solar', 'rocketry', 'jiramate', 'pantryfy'];
  
   grid.innerHTML = ORDER.map(id => {
     const p = PROJECTS[id];
+
+    const winnerHTML = p.winner
+      ? `<div style="display:inline-flex;align-items:center;gap:5px;font-size:0.68rem;font-weight:500;color:#b8860b;background:rgba(255,215,0,0.12);border:1px solid rgba(255,215,0,0.25);border-radius:100px;padding:2px 9px;margin-bottom:0.6rem;width:fit-content;">${p.winnerLabel}</div>`
+      : '';
+
     const pressHTML = p.press
       ? `<a href="${p.press.url}" target="_blank" class="press-badge" onclick="event.stopPropagation()">
            <span class="press-badge-dot"></span>${p.press.label}
          </a>` : '';
+
     return `
       <div class="project-card" onclick="openModal('${id}')">
+        ${winnerHTML}
         <span class="project-tag">${p.tag}</span>
         <h3 class="project-title">${p.title}</h3>
         <p class="project-summary">${p.summary}</p>
@@ -254,14 +260,19 @@ function openModal(id) {
   if (!p) return;
  
   let linksHTML = '';
-  if (p.github) linksHTML += `<a href="${p.github}" class="modal-link primary" target="_blank">View on GitHub &#x2197;&#xFE0E;</a>`;
+  if (p.github)  linksHTML += `<a href="${p.github}" class="modal-link primary" target="_blank">View on GitHub &#x2197;&#xFE0E;</a>`;
   if (p.devpost) linksHTML += `<a href="${p.devpost}" class="modal-link outline" target="_blank">Devpost &#x2197;&#xFE0E;</a>`;
-  if (p.press)  linksHTML += `<a href="${p.press.url}" class="modal-link outline" target="_blank">${p.press.label}</a>`;
+  if (p.press)   linksHTML += `<a href="${p.press.url}" class="modal-link outline" target="_blank">${p.press.label}</a>`;
   if (!p.github && !p.devpost && !p.press) linksHTML = `<span style="font-size:0.8rem;color:var(--text-3)">Repo link coming soon</span>`;
  
   const builtHTML = p.built.split('\n\n').map(para => `<p>${para}</p>`).join('');
+
+  const modalWinnerHTML = p.winner
+    ? `<div style="display:inline-flex;align-items:center;gap:6px;font-size:0.72rem;font-weight:500;color:#b8860b;background:rgba(255,215,0,0.12);border:1px solid rgba(255,215,0,0.25);border-radius:100px;padding:3px 10px;margin-bottom:0.85rem;">${p.winnerLabel}</div>`
+    : '';
  
   document.getElementById('modalContent').innerHTML = `
+    ${modalWinnerHTML}
     <p class="modal-tag">${p.tag}</p>
     <h2>${p.title}</h2>
     <div class="modal-section">
