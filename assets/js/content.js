@@ -95,7 +95,7 @@ const PROJECTS = {
     github: 'https://devpost.com/software/pantry-fy',
   },
   braille: {
-    tag: 'Wearable Tech · Embedded Systems · Assistive Technology · Sep 2025–Present · 🏆 SWEMatch 1st Place',
+    tag: 'Wearable Tech · Embedded Systems · Assistive Technology · Sep 2025–Present',
     title: 'BrailLearn — Assistive Braille Input Glove',
     winner: true,
     winnerLabel: '🏆 1st Place — SWEMatch',
@@ -107,7 +107,7 @@ const PROJECTS = {
     github: '',
   },
   scrubai: {
-    tag: 'Computer Vision · AI/ML · Healthcare · WEHack UTD 2026 · 🏆 Track Winner',
+    tag: 'Computer Vision · AI/ML · Healthcare · WEHack UTD 2026',
     title: 'ScrubAI — Surgical Scrub Protocol Verification System',
     winner: true,
     winnerLabel: '🏆 Track Winner — WEHack UTD 2026',
