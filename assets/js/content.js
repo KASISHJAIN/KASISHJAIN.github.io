@@ -51,7 +51,7 @@ const PROJECTS = {
     built: "As the backend developer, I built a Flask API powering the AI features — AI tag generation using OpenAI GPT-3.5, semantic vector search using OpenAI embeddings and pgvector in Supabase, and a /process-card endpoint that chains OCR → tagging → embedding in one call. I also built all frontend service files (CRUD operations for cards, folders, friendships, messaging, and conversations) using TypeScript and Supabase directly. The app is built in React Native with Expo Router.",
     insight: "Semantic search changes how people find memories. A user searching 'someone who appreciates me' can surface an appreciation card even if those exact words never appear in the card — because the search understands meaning, not just keywords. That was the most rewarding thing to see work.",
     tech: ['React Native', 'Expo Router', 'TypeScript', 'Flask', 'Supabase', 'pgvector', 'OpenAI GPT-3.5', 'OpenAI Embeddings', 'Google Cloud Vision', 'PostgreSQL'],
-    github: 'https://github.com/kasishjain',
+    github: 'https://github.com/acm-projects/Memoir',
   },
   rocketry: {
     tag: 'Embedded · Hardware · Aerospace · Sep 2025–Present',
@@ -104,7 +104,7 @@ const PROJECTS = {
     built: "The Interface: Designed a dual-glove system mapping 6 fingers to the 2x3 Braille cell grid (Index/Middle/Ring on each hand).\n\nHardware Stack: Integrated Force-Sensitive Resistors (FSRs) and an ESP32 microcontroller to detect intentional pressure against any surface, filtering out accidental movements that traditional flex sensors might misinterpret.\n\nFirmware: Developed C++ logic on the ESP32 to handle multi-sensor threshold detection and map simultaneous finger-press combinations to a Braille lookup table.\n\nDigital Dashboard: Architected a React-based webpage to provide real-time visual and audio feedback, creating an interactive confirmation loop that accelerates the Braille learning curve.\n\nErgonomics & Safety: Collaborated on a multidisciplinary team (SWE) to ensure the hardware was integrated into lightweight, breathable spandex, focusing on tactile feedback and long-term wearable comfort.",
     insight: "In assistive technology, the hardest problems aren't electrical — they're ergonomic and cognitive. If the audio feedback lags by even a fraction of a second, the user's mental model breaks. This project taught me that functional is not enough — the technology must be invisible to truly empower the user.",
     tech: ['ESP32', 'Force-Sensitive Resistors', 'C++', 'React', 'Braille Lookup Table', 'Wearable Hardware', 'Accessibility Design'],
-    github: '',
+    github: 'https://github.com/KASISHJAIN/BrailLearn',
   },
   scrubai: {
     tag: 'Computer Vision · AI/ML · Healthcare · WEHack UTD 2026',
