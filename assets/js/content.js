@@ -16,7 +16,7 @@ const HERO = {
     { number: "'28", label: 'Graduating' },
   ],
   status: [
-    { key: 'Building', val: '<strong>Memoir</strong> — Mobile AI<br><strong>BrailLearn</strong> — Wearable Hardware' },
+    { key: 'Building', val: '<strong>Orientation Leader</strong> — UTD Summer 2026<br><strong>AI/ML Fellow</strong> — Break Through Tech · Cornell Tech' },
     { key: 'Open to',  val: '<strong>Summer 2026</strong> internships' },
     { key: 'Focus',    val: 'Embedded · Applied AI · SWE' },
     { key: 'Location', val: 'McKinney, TX · Open to relocation' },
